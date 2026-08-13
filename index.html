@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《XX游戏》国服 CBT 测试指南 | CBT Test Guide</title>
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;--brand:#3b5bfd;--brand-dark:#2a44c8;--accent:#ff3b5c;--warn-bg:#fff7ed;--warn-line:#fdba74;--ok:#10b981;--radius:14px;--shadow:0 1px 3px rgba(16,24,40,.06),0 4px 16px rgba(16,24,40,.05)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans JP","Noto Sans KR",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:15px}
+a{color:var(--brand);text-decoration:none}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header-inner{max-width:1200px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{width:40px;height:40px;border-radius:10px;flex:0 0 auto;background:linear-gradient(135deg,var(--brand),#8b5cf6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px}
+.title-block{flex:1 1 auto;min-width:200px}
+.title-block h1{font-size:17px;font-weight:700;line-height:1.3}
+.title-block .sub{font-size:12px;color:var(--muted)}
+.lang-switch{display:flex;gap:6px;flex-wrap:wrap}
+.lang-switch button{border:1px solid var(--line);background:#fff;color:var(--text);padding:6px 13px;border-radius:999px;cursor:pointer;font-size:13px;font-weight:600;transition:.15s}
+.lang-switch button:hover{border-color:var(--brand);color:var(--brand)}
+.lang-switch button.active{background:var(--brand);border-color:var(--brand);color:#fff}
+.nda{background:var(--warn-bg);border-bottom:1px solid var(--warn-line);color:#9a3412;font-size:12.5px;padding:7px 20px;text-align:center}
+.nda strong{font-weight:700}
+.layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:250px 1fr;gap:24px;padding:24px 20px 60px}
+aside{position:sticky;top:80px;align-self:start;height:calc(100vh - 110px);overflow:auto;padding-right:4px}
+.nav-title{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:0 0 8px 6px}
+nav.side a{display:flex;align-items:center;gap:9px;padding:8px 12px;border-radius:9px;color:var(--muted);font-size:14px;font-weight:500;margin-bottom:2px;transition:.12s}
+nav.side a:hover{background:#eef1fb;color:var(--brand-dark)}
+nav.side a.active{background:#e8edff;color:var(--brand-dark);font-weight:700}
+nav.side a .num{font-size:11px;font-weight:700;color:var(--brand);opacity:.7;width:18px}
+main{min-width:0}
+section.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;margin-bottom:24px}
+section h2{font-size:20px;font-weight:800;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+section h2 .tag{font-size:12px;background:var(--brand);color:#fff;padding:2px 9px;border-radius:6px;font-weight:600;letter-spacing:.02em}
+section .lead{color:var(--muted);font-size:14px;margin-bottom:18px}
+h3{font-size:16px;font-weight:700;margin:20px 0 8px}
+h4{font-size:14px;font-weight:700;margin:14px 0 6px}
+p{margin:6px 0}
+.pill{display:inline-block;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:600}
+.pill.warn{background:var(--warn-bg);color:#9a3412;border:1px solid var(--warn-line)}
+.pill.info{background:#eef2ff;color:var(--brand-dark);border:1px solid #c7d2fe}
+.pill.ok{background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+.info-card{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#fafbff}
+.info-card .k{font-size:12px;color:var(--muted);font-weight:600}
+.info-card .v{font-size:14px;font-weight:700;margin-top:2px}
+.callout{border-radius:12px;padding:14px 16px;margin:14px 0;border:1px solid;font-size:14px}
+.callout.warn{background:var(--warn-bg);border-color:var(--warn-line);color:#9a3412}
+.callout.info{background:#eef2ff;border-color:#c7d2fe;color:#3730a3}
+.callout.tip{background:#ecfdf5;border-color:#a7f3d0;color:#065f46}
+.callout .ct{font-weight:800;display:block;margin-bottom:3px}
+.steps{counter-reset:step;margin-top:12px}
+.step{display:flex;gap:14px;margin-bottom:18px}
+.step .dot{counter-increment:step;flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.step .dot::before{content:counter(step)}
+.step .body{flex:1;min-width:0}
+.step .body b{display:block;font-size:14.5px}
+.step .body p{color:var(--muted);font-size:13.5px;margin-top:2px}
+.figure{margin:16px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.figure-img{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#eef1fb,#f7f3ff);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;overflow:hidden}
+.figure-img .ph{text-align:center;line-height:1.6;padding:20px}
+.figure-img .ph .icon{font-size:30px;display:block;margin-bottom:4px}
+.marker{position:absolute;transform:translate(-50%,-50%);width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px rgba(255,255,255,.85);cursor:pointer}
+.marker.pulse{animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 3px rgba(255,255,255,.85),0 0 0 0 rgba(255,59,92,.5)}70%{box-shadow:0 0 0 3px rgba(255,255,255,.85),0 0 0 12px rgba(255,59,92,0)}100%{box-shadow:0 0 0 3px rgba(255,255,255,.85),0 0 0 0 rgba(255,59,92,0)}}
+.figure-cap{background:#fafbff;border-top:1px solid var(--line);padding:12px 16px}
+.figure-cap .row{display:flex;gap:10px;align-items:flex-start;padding:4px 0;font-size:13.5px}
+.figure-cap .badge{flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.gif-ph{aspect-ratio:16/9;background:linear-gradient(135deg,#1f2937,#4c1d95);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#e5e7eb;margin:14px 0;gap:8px}
+.gif-ph .play{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:22px}
+.gif-ph .lbl{font-size:12px;opacity:.8}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:#f3f5fc;font-weight:700}
+tr:nth-child(even) td{background:#fafbff}
+.lang-table td:first-child{font-weight:700;white-space:nowrap;background:#f3f5fc}
+.faq{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+.faq summary{padding:13px 16px;cursor:pointer;font-weight:600;font-size:14px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"＋";color:var(--muted);font-weight:700}
+.faq[open] summary::after{content:"－";color:var(--brand)}
+.faq .a{padding:0 16px 14px;color:var(--muted);font-size:13.5px}
+.check li{list-style:none;padding:6px 0 6px 30px;position:relative;font-size:14px}
+.check li::before{content:"✓";position:absolute;left:6px;top:6px;width:18px;height:18px;border-radius:5px;background:#ecfdf5;color:#065f46;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:12px}
+.contact{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fafbff;margin-top:12px}
+.contact .k{font-size:12px;color:var(--muted);font-weight:600}
+.contact .v{font-size:14.5px;font-weight:600;margin-bottom:8px}
+footer{max-width:1200px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:12.5px;text-align:center}
+#top{position:fixed;right:20px;bottom:20px;width:42px;height:42px;border-radius:50%;background:var(--brand);color:#fff;border:none;cursor:pointer;font-size:18px;box-shadow:var(--shadow);display:none;z-index:60}
+@media(max-width:900px){
+.layout{grid-template-columns:1fr;padding-top:16px}
+aside{position:static;height:auto;overflow-x:auto;white-space:nowrap;display:flex;gap:6px;padding-bottom:6px}
+.nav-title{display:none}
+nav.side{display:flex;gap:4px}
+nav.side a{padding:6px 12px;border:1px solid var(--line);border-radius:999px;white-space:nowrap;margin:0}
+nav.side a .num{display:none}
+nav.side a.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+section.card{padding:20px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">G</div>
+    <div class="title-block">
+      <h1 data-i18n="app.title">《XX游戏》国服 CBT 测试指南</h1>
+      <div class="sub" data-i18n="app.subtitle">海外 KOL 试玩说明书 · 封闭测试版本</div>
+    </div>
+    <div class="lang-switch" id="langSwitch">
+      <button data-lang="zh" class="active">中文</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="ja">日本語</button>
+      <button data-lang="ko">한국어</button>
+    </div>
+  </div>
+</header>
+
+<div class="nda">
+  <strong data-i18n="nda.strong">保密提示：</strong><span data-i18n="nda.text">本测试包及全部内容均属保密信息，未经书面许可请勿对外传播或公开未解禁内容。</span>
+</div>
+
+<div class="layout">
+  <aside>
+    <div class="nav-title" data-i18n="nav.title">目录</div>
+    <nav class="side" id="sideNav">
+      <a href="#overview"><span class="num">01</span><span data-i18n="nav.overview">概览</span></a>
+      <a href="#install"><span class="num">02</span><span data-i18n="nav.install">获取与安装</span></a>
+      <a href="#account"><span class="num">03</span><span data-i18n="nav.account">账号登录</span></a>
+      <a href="#ui"><span class="num">04</span><span data-i18n="nav.ui">界面翻译对照</span></a>
+      <a href="#gameplay"><span class="num">05</span><span data-i18n="nav.gameplay">核心玩法</span></a>
+      <a href="#quickstart"><span class="num">06</span><span data-i18n="nav.quickstart">快速上手</span></a>
+      <a href="#glossary"><span class="num">07</span><span data-i18n="nav.glossary">术语表</span></a>
+      <a href="#tasks"><span class="num">08</span><span data-i18n="nav.tasks">试玩任务</span></a>
+      <a href="#rules"><span class="num">09</span><span data-i18n="nav.rules">发布规范</span></a>
+      <a href="#faq"><span class="num">10</span><span data-i18n="nav.faq">FAQ</span></a>
+      <a href="#support"><span class="num">11</span><span data-i18n="nav.support">支持联系</span></a>
+    </nav>
+  </aside>
+
+  <main>
+    <!-- 01 概览 -->
+    <section class="card" id="overview">
+      <h2><span data-i18n="nav.overview">概览</span></h2>
+      <p class="lead" data-i18n="overview.lead">测试基本信息一览。请在试玩前仔细阅读。</p>
+      <div class="info-grid">
+        <div class="info-card"><div class="k" data-i18n="overview.name">游戏名称</div><div class="v">《XX游戏》 / Project X</div></div>
+        <div class="info-card"><div class="k" data-i18n="overview.type">类型 / 题材</div><div class="v">RPG · 动作冒险（示例）</div></div>
+        <div class="info-card"><div class="k" data-i18n="overview.platform">测试平台</div><div class="v">PC / iOS / Android（示例）</div></div>
+        <div class="info-card"><div class="k" data-i18n="overview.period">测试时间</div><div class="v">2026.08.20 - 08.27（示例）</div></div>
+        <div class="info-card"><div class="k" data-i18n="overview.phase">测试阶段</div><div class="v">国服 CBT（封闭测试）</div></div>
+        <div class="info-card"><div class="k" data-i18n="overview.lang">语言版本</div><div class="v"><span class="pill warn" data-i18n="overview.onlycn">仅中文</span></div></div>
+      </div>
+      <div class="callout warn">
+        <span class="ct" data-i18n="overview.warn.title">⚠ 重要提示</span>
+        <span data-i18n="overview.warn.text">当前游戏界面仅提供中文版本。请配合本指南「界面翻译对照」章节操作。</span>
+      </div>
+    </section>
+
+    <!-- 02 获取与安装 -->
+    <section class="card" id="install">
+      <h2><span data-i18n="nav.install">获取与安装</span></h2>
+      <p class="lead" data-i18n="install.lead">按以下步骤下载并安装测试包。</p>
+      <div class="steps">
+        <div class="step"><div class="dot"></div><div class="body"><b data-i18n="install.s1.t">接收测试账号与下载链接</b><p data-i18n="install.s1.p">由商务对接人通过邮件 / 私信发放，请勿外传。</p></div></div>
+        <div class="step"><div class="dot"></div><div class="body"><b data-i18n="install.s2.t">打开下载链接</b><p data-i18n="install.s2.p">根据设备选择对应安装包（示例：Android APK / iOS TestFlight / PC 安装包）。</p></div></div>
+        <div class="step"><div class="dot"></div><div class="body"><b data-i18n="install.s3.t">安装并完成配置</b><p data-i18n="install.s3.p">如遇地区 / 网络限制，请先连接指定网络环境（见下方说明）。</p></div></div>
+      </div>
+      <div class="callout info">
+        <span class="ct" data-i18n="install.net.title">网络与地区说明</span>
+        <span data-i18n="install.net.text">国服测试可能需连接中国大陆网络环境。请提前确认是否需使用加速器或指定线路。</span>
+      </div>
+      <div class="gif-ph"><div class="play">▶</div><div class="lbl" data-i18n="install.gif">【示例】在此插入下载安装演示 GIF</div></div>
+    </section>
+
+    <!-- 03 账号登录 -->
+    <section class="card" id="account">
+      <h2><span data-i18n="nav.account">账号登录</span></h2>
+      <p class="lead" data-i18n="account.lead">使用官方发放的测试专用账号登录。</p>
+      <div class="callout warn">
+        <span class="ct" data-i18n="account.warn.title">⚠ 实名认证说明</span>
+        <span data-i18n="account.warn.text">国服通常需要国内手机号与实名认证，海外用户无法自助完成。官方已为你准备测试专用账号，无需自行注册。</span>
+      </div>
+      <div class="info-grid">
+        <div class="info-card"><div class="k" data-i18n="account.acc">测试账号</div><div class="v">kol_xxx@example.com</div></div>
+        <div class="info-card"><div class="k" data-i18n="account.pwd">密码</div><div class="v">********（随邮件发放）</div></div>
+        <div class="info-card"><div class="k" data-i18n="account.rule">使用规范</div><div class="v">一人一号，禁止外借</div></div>
+      </div>
+    </section>
+
+    <!-- 04 界面翻译对照 -->
+    <section class="card" id="ui">
+      <h2><span data-i18n="nav.ui">界面翻译对照</span><span class="tag" data-i18n="ui.core">核心</span></h2>
+      <p class="lead" data-i18n="ui.lead">对照下方编号与截图标记，即可理解中文界面含义。</p>
+      <div class="figure">
+        <div class="figure-img">
+          <span class="ph"><span class="icon">🖼</span><span data-i18n="ui.fig.placeholder">【示例】在此替换为主界面截图</span></span>
+          <span class="marker pulse" style="left:22%;top:28%" title="1">1</span>
+          <span class="marker" style="left:58%;top:40%" title="2">2</span>
+          <span class="marker" style="left:78%;top:70%" title="3">3</span>
+        </div>
+        <div class="figure-cap">
+          <div class="row"><span class="badge">1</span><span class="txt"><b data-i18n="ui.fig.m1.k">主菜单</b> — <span data-i18n="ui.fig.m1.v">Main Menu / メインメニュー / 메인 메뉴</span></span></div>
+          <div class="row"><span class="badge">2</span><span class="txt"><b data-i18n="ui.fig.m2.k">任务</b> — <span data-i18n="ui.fig.m2.v">Quests / クエスト / 퀘스트</span></span></div>
+          <div class="row"><span class="badge">3</span><span class="txt"><b data-i18n="ui.fig.m3.k">商城</b> — <span data-i18n="ui.fig.m3.v">Shop / ショップ / 상점</span></span></div>
+        </div>
+      </div>
+      <h3 data-i18n="ui.func.title">常用功能菜单对照</h3>
+      <table class="lang-table">
+        <thead><tr><th data-i18n="ui.func.zh">中文</th><th>English</th><th>日本語</th><th>한국어</th></tr></thead>
+        <tbody>
+          <tr><td>设置</td><td>Settings</td><td>設定</td><td>설정</td></tr>
+          <tr><td>背包</td><td>Inventory</td><td>バッグ</td><td>가방</td></tr>
+          <tr><td>邮件</td><td>Mail</td><td>メール</td><td>우편</td></tr>
+          <tr><td>公会</td><td>Guild</td><td>ギルド</td><td>길드</td></tr>
+          <tr><td>强化</td><td>Enhance</td><td>強化</td><td>강화</td></tr>
+          <tr><td>抽卡</td><td>Gacha / Draw</td><td>ガチャ</td><td>가챠</td></tr>
+          <tr><td>充值</td><td>Recharge</td><td>チャージ</td><td>충전</td></tr>
+        </tbody>
+      </table>
+      <p class="muted" style="color:var(--muted);font-size:12.5px" data-i18n="ui.fig.note">注：标记点位置请根据实际截图调整 left / top 百分比。</p>
+    </section>
+
+    <!-- 05 核心玩法 -->
+    <section class="card" id="gameplay">
+      <h2><span data-i18n="nav.gameplay">核心玩法</span></h2>
+      <p class="lead" data-i18n="gameplay.lead">一句话了解游戏核心循环。</p>
+      <div class="callout tip"><span class="ct" data-i18n="gameplay.loop.title">核心循环</span><span data-i18n="gameplay.loop.text">【示例】探索 → 战斗 → 养成 → 挑战更高难度内容。</span></div>
+      <h3 data-i18n="gameplay.sys.title">主要系统</h3>
+      <ul class="check">
+        <li data-i18n="gameplay.s1">主线 / 支线任务系统</li>
+        <li data-i18n="gameplay.s2">角色养成与强化系统</li>
+        <li data-i18n="gameplay.s3">多人协作 / 公会玩法</li>
+        <li data-i18n="gameplay.s4">特色玩法（示例：PVP 竞技场）</li>
+      </ul>
+    </section>
+
+    <!-- 06 快速上手 -->
+    <section class="card" id="quickstart">
+      <h2><span data-i18n="nav.quickstart">快速上手</span></h2>
+      <p class="lead" data-i18n="quickstart.lead">建议的前 30 分钟体验路线。</p>
+      <div class="steps">
+        <div class="step"><div class="dot"></div><div class="body"><b data-i18n="quickstart.s1.t">完成新手引导</b><p data-i18n="quickstart.s1.p">跟随新手引导熟悉基础操作与界面。</p></div></div>
+        <div class="step"><div class="dot"></div><div class="body"><b data-i18n="quickstart.s2.t">推进主线任务</b><p data-i18n="quickstart.s2.p">体验核心战斗与剧情（约 10 分钟）。</p></div></div>
+        <div class="step"><div class="dot"></div><div class="body"><b data-i18n="quickstart.s3.t">体验特色玩法</b><p data-i18n="quickstart.s3.p">尝试 PVP / 公会等亮点系统。</p></div></div>
+      </div>
+    </section>
+
+    <!-- 07 术语表 -->
+    <section class="card" id="glossary">
+      <h2><span data-i18n="nav.glossary">术语表</span></h2>
+      <p class="lead" data-i18n="glossary.lead">游戏内常见术语对照（示例，请按实际补齐）。</p>
+      <table class="lang-table">
+        <thead><tr><th data-i18n="ui.func.zh">中文</th><th>English</th><th>日本語</th><th>한국어</th></tr></thead>
+        <tbody>
+          <tr><td>货币</td><td>Currency</td><td>通貨</td><td>재화</td></tr>
+          <tr><td>体力</td><td>Stamina</td><td>スタミナ</td><td>스태미나</td></tr>
+          <tr><td>钻石 / 金币</td><td>Diamond / Gold</td><td>ダイヤ / ゴールド</td><td>다이아 / 골드</td></tr>
+          <tr><td>十连抽</td><td>10x Draw</td><td>10連ガチャ</td><td>10연차</td></tr>
+          <tr><td>战力</td><td>Power / CP</td><td>戦力</td><td>전투력</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 08 试玩任务 -->
+    <section class="card" id="tasks">
+      <h2><span data-i18n="nav.tasks">试玩任务</span></h2>
+      <p class="lead" data-i18n="tasks.lead">请在试玩中完成以下内容（如有指定）。</p>
+      <ul class="check">
+        <li data-i18n="tasks.t1">体验并展示新手引导与核心战斗</li>
+        <li data-i18n="tasks.t2">录制至少 3 分钟实机画面</li>
+        <li data-i18n="tasks.t3">在内容中露出游戏名、测试时间与预约链接</li>
+        <li data-i18n="tasks.t4">如遇 Bug，请截图并提交反馈表</li>
+      </ul>
+      <div class="callout info"><span class="ct" data-i18n="tasks.material.title">素材要求</span><span data-i18n="tasks.material.text">建议分辨率 1080p、横屏 16:9，画质清晰，避免遮挡关键 UI。</span></div>
+    </section>
+
+    <!-- 09 发布规范 -->
+    <section class="card" id="rules">
+      <h2><span data-i18n="nav.rules">发布规范</span></h2>
+      <p class="lead" data-i18n="rules.lead">内容发布前请遵守以下规范。</p>
+      <div class="callout warn"><span class="ct" data-i18n="rules.embargo.title">解禁时间（Embargo）</span><span data-i18n="rules.embargo.text">请在指定时间后方可发布内容，具体时间以商务对接人通知为准。</span></div>
+      <ul class="check">
+        <li data-i18n="rules.r1">需按各国法规进行广告 / 合作标识披露（美国 FTC、日本景表法、韩国推荐标识等）</li>
+        <li data-i18n="rules.r2">仅在授权平台发布，Logo / 截图 / BGM 需在授权范围内使用</li>
+        <li data-i18n="rules.r3">不得公开未解禁内容或泄露测试包</li>
+      </ul>
+    </section>
+
+    <!-- 10 FAQ -->
+    <section class="card" id="faq">
+      <h2><span data-i18n="nav.faq">FAQ</span></h2>
+      <p class="lead" data-i18n="faq.lead">常见问题。</p>
+      <details class="faq"><summary data-i18n="faq.q1">无法登录怎么办？</summary><div class="a" data-i18n="faq.a1">请确认使用官方发放的测试账号，并检查网络环境，重试后仍异常请截图联系支持。</div></details>
+      <details class="faq"><summary data-i18n="faq.q2">看不懂中文提示怎么办？</summary><div class="a" data-i18n="faq.a2">请参考本指南「界面翻译对照」章节，或截图联系支持获取帮助。</div></details>
+      <details class="faq"><summary data-i18n="faq.q3">遇到卡顿 / 闪退？</summary><div class="a" data-i18n="faq.a3">请记录设备型号与复现步骤，附截图提交反馈表。</div></details>
+    </section>
+
+    <!-- 11 支持联系 -->
+    <section class="card" id="support">
+      <h2><span data-i18n="nav.support">支持联系</span></h2>
+      <p class="lead" data-i18n="support.lead">如遇问题请通过以下方式联系。</p>
+      <div class="contact"><div class="k" data-i18n="support.tech">技术支持</div><div class="v">support@example.com</div></div>
+      <div class="contact"><div class="k" data-i18n="support.bd">商务对接</div><div class="v">bd@example.com</div></div>
+      <div class="contact"><div class="k" data-i18n="support.bug">Bug 反馈</div><div class="v"><a href="#" data-i18n="support.buglink">点击填写反馈表（示例链接）</a></div></div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <span data-i18n="footer.copy">© 2026 游戏名称 保留所有权利</span><span class="sep">·</span><span data-i18n="footer.confidential">机密 · 仅供受邀 KOL 使用</span>
+</footer>
+
+<button id="top" title="Top">↑</button>
+
+<script>
+const I18N = {
+  zh: {
+    "app.title":"《XX游戏》国服 CBT 测试指南",
+    "app.subtitle":"海外 KOL 试玩说明书 · 封闭测试版本",
+    "nda.strong":"保密提示：",
+    "nda.text":"本测试包及全部内容均属保密信息，未经书面许可请勿对外传播或公开未解禁内容。",
+    "nav.title":"目录",
+    "nav.overview":"概览","nav.install":"获取与安装","nav.account":"账号登录","nav.ui":"界面翻译对照","nav.gameplay":"核心玩法","nav.quickstart":"快速上手","nav.glossary":"术语表","nav.tasks":"试玩任务","nav.rules":"发布规范","nav.faq":"FAQ","nav.support":"支持联系",
+    "overview.lead":"测试基本信息一览。请在试玩前仔细阅读。",
+    "overview.name":"游戏名称","overview.type":"类型 / 题材","overview.platform":"测试平台","overview.period":"测试时间","overview.phase":"测试阶段","overview.lang":"语言版本","overview.onlycn":"仅中文",
+    "overview.warn.title":"⚠ 重要提示","overview.warn.text":"当前游戏界面仅提供中文版本。请配合本指南「界面翻译对照」章节操作。",
+    "install.lead":"按以下步骤下载并安装测试包。",
+    "install.s1.t":"接收测试账号与下载链接","install.s1.p":"由商务对接人通过邮件 / 私信发放，请勿外传。",
+    "install.s2.t":"打开下载链接","install.s2.p":"根据设备选择对应安装包（示例：Android APK / iOS TestFlight / PC 安装包）。",
+    "install.s3.t":"安装并完成配置","install.s3.p":"如遇地区 / 网络限制，请先连接指定网络环境（见下方说明）。",
+    "install.net.title":"网络与地区说明","install.net.text":"国服测试可能需连接中国大陆网络环境。请提前确认是否需使用加速器或指定线路。",
+    "install.gif":"【示例】在此插入下载安装演示 GIF",
+    "account.lead":"使用官方发放的测试专用账号登录。",
+    "account.warn.title":"⚠ 实名认证说明","account.warn.text":"国服通常需要国内手机号与实名认证，海外用户无法自助完成。官方已为你准备测试专用账号，无需自行注册。",
+    "account.acc":"测试账号","account.pwd":"密码","account.rule":"使用规范",
+    "ui.core":"核心","ui.lead":"对照下方编号与截图标记，即可理解中文界面含义。",
+    "ui.fig.placeholder":"【示例】在此替换为主界面截图",
+    "ui.fig.m1.k":"主菜单","ui.fig.m1.v":"Main Menu / メインメニュー / 메인 메뉴",
+    "ui.fig.m2.k":"任务","ui.fig.m2.v":"Quests / クエスト / 퀘스트",
+    "ui.fig.m3.k":"商城","ui.fig.m3.v":"Shop / ショップ / 상점",
+    "ui.func.title":"常用功能菜单对照","ui.func.zh":"中文",
+    "ui.fig.note":"注：标记点位置请根据实际截图调整 left / top 百分比。",
+    "gameplay.lead":"一句话了解游戏核心循环。",
+    "gameplay.loop.title":"核心循环","gameplay.loop.text":"【示例】探索 → 战斗 → 养成 → 挑战更高难度内容。",
+    "gameplay.sys.title":"主要系统",
+    "gameplay.s1":"主线 / 支线任务系统","gameplay.s2":"角色养成与强化系统","gameplay.s3":"多人协作 / 公会玩法","gameplay.s4":"特色玩法（示例：PVP 竞技场）",
+    "quickstart.lead":"建议的前 30 分钟体验路线。",
+    "quickstart.s1.t":"完成新手引导","quickstart.s1.p":"跟随新手引导熟悉基础操作与界面。",
+    "quickstart.s2.t":"推进主线任务","quickstart.s2.p":"体验核心战斗与剧情（约 10 分钟）。",
+    "quickstart.s3.t":"体验特色玩法","quickstart.s3.p":"尝试 PVP / 公会等亮点系统。",
+    "glossary.lead":"游戏内常见术语对照（示例，请按实际补齐）。",
+    "tasks.lead":"请在试玩中完成以下内容（如有指定）。",
+    "tasks.t1":"体验并展示新手引导与核心战斗","tasks.t2":"录制至少 3 分钟实机画面","tasks.t3":"在内容中露出游戏名、测试时间与预约链接","tasks.t4":"如遇 Bug，请截图并提交反馈表",
+    "tasks.material.title":"素材要求","tasks.material.text":"建议分辨率 1080p、横屏 16:9，画质清晰，避免遮挡关键 UI。",
+    "rules.lead":"内容发布前请遵守以下规范。",
+    "rules.embargo.title":"解禁时间（Embargo）","rules.embargo.text":"请在指定时间后方可发布内容，具体时间以商务对接人通知为准。",
+    "rules.r1":"需按各国法规进行广告 / 合作标识披露（美国 FTC、日本景表法、韩国推荐标识等）",
+    "rules.r2":"仅在授权平台发布，Logo / 截图 / BGM 需在授权范围内使用","rules.r3":"不得公开未解禁内容或泄露测试包",
+    "faq.lead":"常见问题。",
+    "faq.q1":"无法登录怎么办？","faq.a1":"请确认使用官方发放的测试账号，并检查网络环境，重试后仍异常请截图联系支持。",
+    "faq.q2":"看不懂中文提示怎么办？","faq.a2":"请参考本指南「界面翻译对照」章节，或截图联系支持获取帮助。",
+    "faq.q3":"遇到卡顿 / 闪退？","faq.a3":"请记录设备型号与复现步骤，附截图提交反馈表。",
+    "support.lead":"如遇问题请通过以下方式联系。",
+    "support.tech":"技术支持","support.bd":"商务对接","support.bug":"Bug 反馈","support.buglink":"点击填写反馈表（示例链接）",
+    "footer.copy":"© 2026 游戏名称 保留所有权利","footer.confidential":"机密 · 仅供受邀 KOL 使用"
+  },
+  en: {
+    "app.title":"Project X — China CBT Test Guide",
+    "app.subtitle":"KOL Playtest Guide · Closed Beta",
+    "nda.strong":"Confidential: ","nda.text":"This test build and all its contents are confidential. Do not distribute or publish unreleased content without written permission.",
+    "nav.title":"Contents",
+    "nav.overview":"Overview","nav.install":"Download & Install","nav.account":"Account & Login","nav.ui":"UI Translation","nav.gameplay":"Core Gameplay","nav.quickstart":"Quick Start","nav.glossary":"Glossary","nav.tasks":"Playtest Tasks","nav.rules":"Publishing Rules","nav.faq":"FAQ","nav.support":"Support",
+    "overview.lead":"Key test information at a glance. Please read carefully before playing.",
+    "overview.name":"Game Title","overview.type":"Genre","overview.platform":"Platform","overview.period":"Test Period","overview.phase":"Phase","overview.lang":"Language","overview.onlycn":"Chinese Only",
+    "overview.warn.title":"⚠ Important","overview.warn.text":"The game UI is currently Chinese-only. Please follow the \"UI Translation\" section of this guide.",
+    "install.lead":"Follow the steps below to download and install the test build.",
+    "install.s1.t":"Receive test account & download link","install.s1.p":"Provided by your contact via email / DM. Do not share.",
+    "install.s2.t":"Open the download link","install.s2.p":"Choose the package for your device (e.g. Android APK / iOS TestFlight / PC installer).",
+    "install.s3.t":"Install and configure","install.s3.p":"If blocked by region / network, connect to the designated network first (see below).",
+    "install.net.title":"Network & Region","install.net.text":"The China server may require a mainland network. Confirm whether a VPN/accelerator or designated route is needed.",
+    "install.gif":"[Sample] Insert a download & install GIF here",
+    "account.lead":"Log in with the official test account provided.",
+    "account.warn.title":"⚠ Real-name Verification","account.warn.text":"The China server usually requires a mainland phone number and real-name verification, which overseas users cannot complete. A dedicated test account is provided for you — no self-registration needed.",
+    "account.acc":"Test Account","account.pwd":"Password","account.rule":"Usage",
+    "ui.core":"CORE","ui.lead":"Match the numbers below with the markers on the screenshot to understand the Chinese UI.",
+    "ui.fig.placeholder":"[Sample] Replace with main screen screenshot",
+    "ui.fig.m1.k":"Main Menu","ui.fig.m1.v":"Main Menu / メインメニュー / 메인 메뉴",
+    "ui.fig.m2.k":"Quests","ui.fig.m2.v":"Quests / クエスト / 퀘스트",
+    "ui.fig.m3.k":"Shop","ui.fig.m3.v":"Shop / ショップ / 상점",
+    "ui.func.title":"Common Menu Translation","ui.func.zh":"中文",
+    "ui.fig.note":"Note: adjust marker positions (left / top %) to match your actual screenshot.",
+    "gameplay.lead":"Understand the core loop in one sentence.",
+    "gameplay.loop.title":"Core Loop","gameplay.loop.text":"[Sample] Explore → Battle → Upgrade → Challenge harder content.",
+    "gameplay.sys.title":"Key Systems",
+    "gameplay.s1":"Main / Side quest systems","gameplay.s2":"Character upgrade & enhancement","gameplay.s3":"Co-op / Guild play","gameplay.s4":"Signature mode (e.g. PVP Arena)",
+    "quickstart.lead":"Recommended first-30-minutes route.",
+    "quickstart.s1.t":"Finish the tutorial","quickstart.s1.p":"Follow the tutorial to learn basic controls and UI.",
+    "quickstart.s2.t":"Progress the main quest","quickstart.s2.p":"Experience core combat and story (~10 min).",
+    "quickstart.s3.t":"Try signature modes","quickstart.s3.p":"Try PVP / Guild highlights.",
+    "glossary.lead":"Common in-game terms (sample — please complete with actual terms).",
+    "tasks.lead":"Please complete the following during your playtest (if specified).",
+    "tasks.t1":"Showcase the tutorial and core combat","tasks.t2":"Record at least 3 minutes of live gameplay","tasks.t3":"Mention the game title, test period and pre-registration link","tasks.t4":"If you hit a bug, screenshot it and submit the feedback form",
+    "tasks.material.title":"Asset Requirements","tasks.material.text":"1080p recommended, landscape 16:9, clear quality, avoid covering key UI.",
+    "rules.lead":"Please follow these rules before publishing.",
+    "rules.embargo.title":"Embargo","rules.embargo.text":"Publish only after the designated time as notified by your contact.",
+    "rules.r1":"Disclose the ad/partnership as required by local law (US FTC, Japan Premiums & Representations Act, Korean endorsement labeling, etc.)",
+    "rules.r2":"Publish only on authorized platforms; use Logo / screenshots / BGM within the licensed scope","rules.r3":"Do not reveal unreleased content or leak the test build",
+    "faq.lead":"Common questions.",
+    "faq.q1":"Can't log in?","faq.a1":"Confirm you're using the official test account and check your network. If it still fails, screenshot it and contact support.",
+    "faq.q2":"Can't understand the Chinese prompts?","faq.a2":"See the \"UI Translation\" section, or screenshot and contact support.",
+    "faq.q3":"Lag / crash?","faq.a3":"Note your device model and repro steps, attach screenshots, and submit the feedback form.",
+    "support.lead":"Contact us through the following channels.",
+    "support.tech":"Technical Support","support.bd":"Business Contact","support.bug":"Bug Report","support.buglink":"Fill in the feedback form (sample link)",
+    "footer.copy":"© 2026 Game Title. All rights reserved.","footer.confidential":"Confidential · For invited KOLs only"
+  },
+  ja: {
+    "app.title":"『XXゲーム』中国版 CBT テストガイド",
+    "app.subtitle":"海外 KOL 試遊ガイド · クローズドβ版",
+    "nda.strong":"機密保持：","nda.text":"本テストパックおよび全コンテンツは機密情報です。書面による許可なく未公開コンテンツを配布・公開しないでください。",
+    "nav.title":"目次",
+    "nav.overview":"概要","nav.install":"入手とインストール","nav.account":"アカウント・ログイン","nav.ui":"UI翻訳ガイド","nav.gameplay":"コアゲームプレイ","nav.quickstart":"クイックスタート","nav.glossary":"用語集","nav.tasks":"試遊タスク","nav.rules":"公開ガイドライン","nav.faq":"FAQ","nav.support":"サポート",
+    "overview.lead":"テスト基本情報の一覧です。試遊前にご確認ください。",
+    "overview.name":"ゲーム名","overview.type":"ジャンル","overview.platform":"プラットフォーム","overview.period":"テスト期間","overview.phase":"段階","overview.lang":"言語","overview.onlycn":"中国語のみ",
+    "overview.warn.title":"⚠ 重要","overview.warn.text":"現在ゲームUIは中国語のみです。本ガイドの「UI翻訳ガイド」を参照しながら操作してください。",
+    "install.lead":"以下の手順でテストパックをダウンロード・インストールします。",
+    "install.s1.t":"テストアカウントとリンクを受け取る","install.s1.p":"担当者からメール / DM で発行されます。共有しないでください。",
+    "install.s2.t":"ダウンロードリンクを開く","install.s2.p":"端末に応じたパッケージを選択（例：Android APK / iOS TestFlight / PC インストーラー）。",
+    "install.s3.t":"インストールと設定","install.s3.p":"地域・ネットワーク制限がある場合は、先に指定のネットワークへ接続してください（下記参照）。",
+    "install.net.title":"ネットワークと地域","install.net.text":"中国版テストは中国本土のネットワーク環境が必要な場合があります。VPN・アクセラレータの要否を事前に確認してください。",
+    "install.gif":"【サンプル】ダウンロード・インストールのデモGIFをここに挿入",
+    "account.lead":"公式発行のテスト専用アカウントでログインします。",
+    "account.warn.title":"⚠ 実名認証について","account.warn.text":"中国版は通常、中国の携帯番号と実名認証が必要で、海外ユーザーは自力で完了できません。専用テストアカウントをご用意していますので、登録は不要です。",
+    "account.acc":"テストアカウント","account.pwd":"パスワード","account.rule":"利用規約",
+    "ui.core":"コア","ui.lead":"下の番号とスクリーンショットのマーカーを照合すれば、中国語UIの意味を理解できます。",
+    "ui.fig.placeholder":"【サンプル】メイン画面のスクリーンショットに差し替え",
+    "ui.fig.m1.k":"メインメニュー","ui.fig.m1.v":"Main Menu / メインメニュー / 메인 메뉴",
+    "ui.fig.m2.k":"クエスト","ui.fig.m2.v":"Quests / クエスト / 퀘스트",
+    "ui.fig.m3.k":"ショップ","ui.fig.m3.v":"Shop / ショップ / 상점",
+    "ui.func.title":"主要メニュー翻訳","ui.func.zh":"中文",
+    "ui.fig.note":"注：マーカー位置は実際のスクリーンショットに合わせて left / top % を調整してください。",
+    "gameplay.lead":"コアループを一文で理解。",
+    "gameplay.loop.title":"コアループ","gameplay.loop.text":"【サンプル】探索 → 戦闘 → 育成 → 高難度コンテンツへ挑戦。",
+    "gameplay.sys.title":"主要システム",
+    "gameplay.s1":"メイン / サブクエスト","gameplay.s2":"キャラ育成と強化","gameplay.s3":"協力 / ギルドプレイ","gameplay.s4":"特色モード（例：PVPアリーナ）",
+    "quickstart.lead":"推奨の最初30分ルート。",
+    "quickstart.s1.t":"チュートリアルを完了","quickstart.s1.p":"基本操作とUIを学びます。",
+    "quickstart.s2.t":"メインクエストを進める","quickstart.s2.p":"コア戦闘とストーリーを体験（約10分）。",
+    "quickstart.s3.t":"特色モードを体験","quickstart.s3.p":"PVP・ギルドなどを試します。",
+    "glossary.lead":"ゲーム内のよく使う用語対照（サンプル。実際の用語で補完してください）。",
+    "tasks.lead":"試遊中に以下を完了してください（指定がある場合）。",
+    "tasks.t1":"チュートリアルとコア戦闘を紹介","tasks.t2":"実機映像を3分以上録画","tasks.t3":"ゲーム名・テスト期間・予約リンクを露出","tasks.t4":"不具合はスクリーンショットを添えて報告",
+    "tasks.material.title":"素材要件","tasks.material.text":"1080p推奨、横16:9、画質クリア、重要UIを隠さない。",
+    "rules.lead":"公開前に以下のルールを守ってください。",
+    "rules.embargo.title":"解禁時間（Embargo）","rules.embargo.text":"担当者から通知された指定時間以降に公開してください。",
+    "rules.r1":"各国の法令に基づき広告・提携表示を行う（米FTC、日本の景品表示法、韓国の推奨表示など）",
+    "rules.r2":"許可されたプラットフォームのみで公開し、ロゴ・スクリーンショット・BGMは許諾範囲内で使用","rules.r3":"未公開コンテンツやテストパックを漏えいしない",
+    "faq.lead":"よくある質問。",
+    "faq.q1":"ログインできない場合は？","faq.a1":"公式テストアカウントの使用とネットワークを確認し、再試行後も異常ならスクリーンショットを添えてサポートへ。",
+    "faq.q2":"中国語の表示が読めない場合は？","faq.a2":"本ガイドの「UI翻訳ガイド」を参照するか、スクリーンショットを添えてサポートへ。",
+    "faq.q3":"カクつき / クラッシュは？","faq.a3":"端末モデルと再現手順を記録し、スクリーンショットを添えて報告してください。",
+    "support.lead":"問題があれば以下からご連絡ください。",
+    "support.tech":"テクニカルサポート","support.bd":"ビジネス窓口","support.bug":"バグ報告","support.buglink":"報告フォームを記入（サンプルリンク）",
+    "footer.copy":"© 2026 ゲーム名 All rights reserved.","footer.confidential":"機密 · 招待KOL限定"
+  },
+  ko: {
+    "app.title":"『XX게임』중국서버 CBT 테스트 가이드",
+    "app.subtitle":"해외 KOL 체험 가이드 · 클로즈드 베타",
+    "nda.strong":"기밀 유지: ","nda.text":"본 테스트 패키지 및 모든 콘텐츠는 기밀 정보입니다. 서면 허가 없이 미공개 콘텐츠를 배포·공개하지 마세요.",
+    "nav.title":"목차",
+    "nav.overview":"개요","nav.install":"다운로드 및 설치","nav.account":"계정·로그인","nav.ui":"UI 번역 가이드","nav.gameplay":"핵심 플레이","nav.quickstart":"빠른 시작","nav.glossary":"용어집","nav.tasks":"체험 태스크","nav.rules":"공개 가이드라인","nav.faq":"FAQ","nav.support":"지원",
+    "overview.lead":"테스트 기본 정보 요약입니다. 플레이 전 확인하세요.",
+    "overview.name":"게임명","overview.type":"장르","overview.platform":"플랫폼","overview.period":"테스트 기간","overview.phase":"단계","overview.lang":"언어","overview.onlycn":"중국어만",
+    "overview.warn.title":"⚠ 중요","overview.warn.text":"현재 게임 UI는 중국어만 제공됩니다. 본 가이드의 'UI 번역 가이드'를 참고하세요.",
+    "install.lead":"아래 단계에 따라 테스트 패키지를 다운로드·설치하세요.",
+    "install.s1.t":"테스트 계정·링크 수신","install.s1.p":"담당자가 이메일/DM으로 발급합니다. 공유하지 마세요.",
+    "install.s2.t":"다운로드 링크 열기","install.s2.p":"기기에 맞는 패키지 선택(예: Android APK / iOS TestFlight / PC 설치 파일).",
+    "install.s3.t":"설치 및 설정","install.s3.p":"지역·네트워크 제한 시 지정 네트워크에 먼저 연결하세요(아래 참고).",
+    "install.net.title":"네트워크·지역","install.net.text":"중국서버 테스트는 중국 본토 네트워크가 필요할 수 있습니다. VPN/가속기 필요 여부를 미리 확인하세요.",
+    "install.gif":"[샘플] 다운로드·설치 데모 GIF 삽입 위치",
+    "account.lead":"공식 발급 테스트 전용 계정으로 로그인하세요.",
+    "account.warn.title":"⚠ 실명 인증 안내","account.warn.text":"중국서버는 보통 중국 휴대폰 번호와 실명 인증이 필요해 해외 사용자는 직접 완료할 수 없습니다. 전용 테스트 계정을 제공드리니 별도 가입이 필요 없습니다.",
+    "account.acc":"테스트 계정","account.pwd":"비밀번호","account.rule":"이용 규칙",
+    "ui.core":"핵심","ui.lead":"아래 번호와 스크린샷 마커를 맞춰 보면 중국어 UI 의미를 이해할 수 있습니다.",
+    "ui.fig.placeholder":"[샘플] 메인 화면 스크린샷으로 교체",
+    "ui.fig.m1.k":"메인 메뉴","ui.fig.m1.v":"Main Menu / メインメニュー / 메인 메뉴",
+    "ui.fig.m2.k":"퀘스트","ui.fig.m2.v":"Quests / クエスト / 퀘스트",
+    "ui.fig.m3.k":"상점","ui.fig.m3.v":"Shop / ショップ / 상점",
+    "ui.func.title":"주요 메뉴 번역","ui.func.zh":"中文",
+    "ui.fig.note":"참고: 마커 위치는 실제 스크린샷에 맞게 left / top %를 조정하세요.",
+    "gameplay.lead":"핵심 루프를 한 문장으로 이해하세요.",
+    "gameplay.loop.title":"핵심 루프","gameplay.loop.text":"[샘플] 탐험 → 전투 → 육성 → 더 어려운 콘텐츠 도전.",
+    "gameplay.sys.title":"주요 시스템",
+    "gameplay.s1":"메인/서브 퀘스트","gameplay.s2":"캐릭터 육성·강화","gameplay.s3":"협동/길드 플레이","gameplay.s4":"특색 모드(예: PVP 아레나)",
+    "quickstart.lead":"추천 첫 30분 루트.",
+    "quickstart.s1.t":"튜토리얼 완료","quickstart.s1.p":"기본 조작과 UI를 익힙니다.",
+    "quickstart.s2.t":"메인 퀘스트 진행","quickstart.s2.p":"핵심 전투와 스토리를 체험(약 10분).",
+    "quickstart.s3.t":"특색 모드 체험","quickstart.s3.p":"PVP·길드 등을 시도합니다.",
+    "glossary.lead":"게임 내 자주 쓰는 용어 대조(샘플. 실제 용어로 보완하세요).",
+    "tasks.lead":"체험 중 다음을 완료하세요(지정된 경우).",
+    "tasks.t1":"튜토리얼·핵심 전투 소개","tasks.t2":"실기 영상 3분 이상 녹화","tasks.t3":"게임명·테스트 기간·예약 링크 노출","tasks.t4":"버그 발생 시 스크린샷과 함께 신고",
+    "tasks.material.title":"소재 요구사항","tasks.material.text":"1080p 권장, 가로 16:9, 선명한 화질, 주요 UI 가리지 않기.",
+    "rules.lead":"공개 전 아래 규칙을 지켜주세요.",
+    "rules.embargo.title":"해금 시간(Embargo)","rules.embargo.text":"담당자가 안내한 지정 시간 이후에 공개하세요.",
+    "rules.r1":"각국 법령에 따라 광고·제휴 표기를 하세요(미국 FTC, 일본 경품표시법, 한국 추천 표기 등)",
+    "rules.r2":"허가된 플랫폼에서만 공개하고, 로고·스크린샷·BGM은 허가 범위 내 사용","rules.r3":"미공개 콘텐츠 또는 테스트 패키지를 유출하지 않기",
+    "faq.lead":"자주 묻는 질문.",
+    "faq.q1":"로그인이 안 되나요?","faq.a1":"공식 테스트 계정 사용 여부와 네트워크를 확인하고, 재시도 후에도 문제가 있으면 스크린샷과 함께 문의하세요.",
+    "faq.q2":"중국어 표시를 읽을 수 없나요?","faq.a2":"본 가이드의 'UI 번역 가이드'를 참고하거나 스크린샷과 함께 문의하세요.",
+    "faq.q3":"렉/크래시가 발생하나요?","faq.a3":"기기 모델과 재현 절차를 기록하고 스크린샷을 첨부해 신고하세요.",
+    "support.lead":"문제가 있으면 아래로 연락하세요.",
+    "support.tech":"기술 지원","support.bd":"비즈니스 담당","support.bug":"버그 신고","support.buglink":"신고 양식 작성(샘플 링크)",
+    "footer.copy":"© 2026 게임명 All rights reserved.","footer.confidential":"기밀 · 초대 KOL 전용"
+  }
+};
+
+let current = 'zh';
+function applyLang(lang){
+  current = lang;
+  document.documentElement.lang = lang;
+  const dict = I18N[lang] || I18N.zh;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n');
+    if(dict[k] != null) el.textContent = dict[k];
+  });
+  document.querySelectorAll('.lang-switch button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  document.title = dict['app.title'];
+}
+document.getElementById('langSwitch').addEventListener('click', e=>{
+  const btn = e.target.closest('button[data-lang]');
+  if(btn) applyLang(btn.dataset.lang);
+});
+
+/* scroll spy */
+const sections = [...document.querySelectorAll('section.card')];
+const navLinks = [...document.querySelectorAll('nav.side a')];
+const topBtn = document.getElementById('top');
+window.addEventListener('scroll', ()=>{
+  let cur = sections[0]?.id;
+  const y = window.scrollY + 120;
+  sections.forEach(s=>{ if(s.offsetTop <= y) cur = s.id; });
+  navLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('href') === '#'+cur));
+  topBtn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+});
+topBtn.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+applyLang('zh');
+</script>
+</body>
+</html>
