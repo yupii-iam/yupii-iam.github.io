@@ -28,15 +28,17 @@ aside{position:sticky;top:80px;align-self:start;height:calc(100vh - 110px);overf
 nav.side a{display:flex;align-items:center;gap:9px;padding:8px 12px;border-radius:9px;color:var(--muted);font-size:14px;font-weight:500;margin-bottom:2px;transition:.12s}
 nav.side a:hover{background:#eef1fb;color:var(--brand-dark)}
 nav.side a.active{background:#e8edff;color:var(--brand-dark);font-weight:700}
-nav.side a .num{font-size:11px;font-weight:700;color:var(--brand);opacity:.7;width:18px}
+nav.side a .num{font-size:11px;font-weight:700;color:var(--brand);opacity:.7;width:20px}
 main{min-width:0}
 section.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;margin-bottom:24px}
 section h2{font-size:20px;font-weight:800;margin-bottom:6px;display:flex;align-items:center;gap:10px}
 section h2 .tag{font-size:12px;background:var(--brand);color:#fff;padding:2px 9px;border-radius:6px;font-weight:600;letter-spacing:.02em}
 section .lead{color:var(--muted);font-size:14px;margin-bottom:18px}
-h3{font-size:16px;font-weight:700;margin:20px 0 8px}
+h3{font-size:16px;font-weight:700;margin:22px 0 8px;display:flex;align-items:center;gap:8px}
+h3 .dot{width:8px;height:8px;border-radius:2px;background:var(--brand);flex:0 0 auto}
 h4{font-size:14px;font-weight:700;margin:14px 0 6px}
 p{margin:6px 0}
+.muted{color:var(--muted)}
 .pill{display:inline-block;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:600}
 .pill.warn{background:var(--warn-bg);color:#9a3412;border:1px solid var(--warn-line)}
 .pill.info{background:#eef2ff;color:var(--brand-dark);border:1px solid #c7d2fe}
@@ -67,25 +69,26 @@ p{margin:6px 0}
 .figure-cap{background:#fafbff;border-top:1px solid var(--line);padding:12px 16px}
 .figure-cap .row{display:flex;gap:10px;align-items:flex-start;padding:4px 0;font-size:13.5px}
 .figure-cap .badge{flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
-.gif-ph{aspect-ratio:16/9;background:linear-gradient(135deg,#1f2937,#4c1d95);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#e5e7eb;margin:14px 0;gap:8px}
-.gif-ph .play{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:22px}
-.gif-ph .lbl{font-size:12px;opacity:.8}
+.figure-cap .hk{flex:0 0 auto;min-width:36px;padding:2px 8px;border-radius:5px;background:#eef1fb;border:1px solid var(--line);color:var(--brand-dark);font-size:12px;font-weight:700;font-family:ui-monospace,Menlo,Consolas,monospace;text-align:center;margin-top:1px}
+.story-block{border-left:3px solid var(--brand);background:#fafbff;border-radius:0 12px 12px 0;padding:16px 18px;margin:14px 0}
+.story-block .ch{font-weight:800;font-size:15px;color:var(--brand-dark);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.story-block .ch .num{background:var(--brand);color:#fff;font-size:12px;padding:1px 8px;border-radius:6px}
+.story-block p{color:#374151;font-size:14px}
 table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
 th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
 th{background:#f3f5fc;font-weight:700}
 tr:nth-child(even) td{background:#fafbff}
-.lang-table td:first-child{font-weight:700;white-space:nowrap;background:#f3f5fc}
-.faq{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
-.faq summary{padding:13px 16px;cursor:pointer;font-weight:600;font-size:14px;list-style:none;display:flex;justify-content:space-between;align-items:center}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"＋";color:var(--muted);font-weight:700}
-.faq[open] summary::after{content:"－";color:var(--brand)}
-.faq .a{padding:0 16px 14px;color:var(--muted);font-size:13.5px}
 .check li{list-style:none;padding:6px 0 6px 30px;position:relative;font-size:14px}
 .check li::before{content:"✓";position:absolute;left:6px;top:6px;width:18px;height:18px;border-radius:5px;background:#ecfdf5;color:#065f46;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:12px}
-.contact{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fafbff;margin-top:12px}
-.contact .k{font-size:12px;color:var(--muted);font-weight:600}
-.contact .v{font-size:14.5px;font-weight:600;margin-bottom:8px}
+.accordion{margin:14px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.accordion summary{list-style:none;cursor:pointer;padding:15px 18px;font-size:15px;font-weight:700;display:flex;align-items:center;gap:10px;background:#fafbff;user-select:none;transition:.15s}
+.accordion summary:hover{background:#eef1fb}
+.accordion summary::-webkit-details-marker{display:none}
+.accordion summary::after{content:"＋";margin-left:auto;color:var(--muted);font-weight:700;font-size:16px;flex:0 0 auto}
+.accordion details[open]>summary::after{content:"－";color:var(--brand)}
+.accordion .cnt{font-size:12px;color:var(--brand-dark);font-weight:600;background:#eef1fb;padding:1px 10px;border-radius:999px;flex:0 0 auto}
+.accordion .acc-body{padding:18px}
+.accordion .acc-body h3:first-child{margin-top:0}
 footer{max-width:1200px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:12.5px;text-align:center}
 #top{position:fixed;right:20px;bottom:20px;width:42px;height:42px;border-radius:50%;background:var(--brand);color:#fff;border:none;cursor:pointer;font-size:18px;box-shadow:var(--shadow);display:none;z-index:60}
 @media(max-width:900px){
@@ -126,32 +129,25 @@ section.card{padding:20px}
   <aside>
     <div class="nav-title" data-i18n="nav.title">目录</div>
     <nav class="side" id="sideNav">
-      <a href="#overview"><span class="num">01</span><span data-i18n="nav.overview">概览</span></a>
-      <a href="#install"><span class="num">02</span><span data-i18n="nav.install">获取与安装</span></a>
-      <a href="#account"><span class="num">03</span><span data-i18n="nav.account">账号登录</span></a>
+      <a href="#overview"><span class="num">01</span><span data-i18n="nav.overview">测试概览</span></a>
+      <a href="#install"><span class="num">02</span><span data-i18n="nav.install">安装指引</span></a>
+      <a href="#spec"><span class="num">03</span><span data-i18n="nav.spec">PC端推荐配置</span></a>
       <a href="#ui"><span class="num">04</span><span data-i18n="nav.ui">界面翻译对照</span></a>
-      <a href="#gameplay"><span class="num">05</span><span data-i18n="nav.gameplay">核心玩法</span></a>
-      <a href="#quickstart"><span class="num">06</span><span data-i18n="nav.quickstart">快速上手</span></a>
-      <a href="#glossary"><span class="num">07</span><span data-i18n="nav.glossary">术语表</span></a>
-      <a href="#tasks"><span class="num">08</span><span data-i18n="nav.tasks">试玩任务</span></a>
-      <a href="#rules"><span class="num">09</span><span data-i18n="nav.rules">发布规范</span></a>
-      <a href="#faq"><span class="num">10</span><span data-i18n="nav.faq">FAQ</span></a>
-      <a href="#support"><span class="num">11</span><span data-i18n="nav.support">支持联系</span></a>
+      <a href="#story"><span class="num">05</span><span data-i18n="nav.story">剧情简要介绍</span></a>
     </nav>
   </aside>
 
   <main>
-    <!-- 01 概览 -->
+    <!-- 01 测试概览 -->
     <section class="card" id="overview">
-      <h2><span data-i18n="nav.overview">概览</span></h2>
-      <p class="lead" data-i18n="overview.lead">测试基本信息一览。请在试玩前仔细阅读。</p>
+      <h2><span data-i18n="nav.overview">测试概览</span></h2>
+      <p class="lead" data-i18n="overview.lead">本次测试的基本信息。</p>
       <div class="info-grid">
-        <div class="info-card"><div class="k" data-i18n="overview.name">游戏名称</div><div class="v">《XX游戏》 / Project X</div></div>
-        <div class="info-card"><div class="k" data-i18n="overview.type">类型 / 题材</div><div class="v">RPG · 动作冒险（示例）</div></div>
-        <div class="info-card"><div class="k" data-i18n="overview.platform">测试平台</div><div class="v">PC / iOS / Android（示例）</div></div>
-        <div class="info-card"><div class="k" data-i18n="overview.period">测试时间</div><div class="v">2026.08.20 - 08.27（示例）</div></div>
-        <div class="info-card"><div class="k" data-i18n="overview.phase">测试阶段</div><div class="v">国服 CBT（封闭测试）</div></div>
-        <div class="info-card"><div class="k" data-i18n="overview.lang">语言版本</div><div class="v"><span class="pill warn" data-i18n="overview.onlycn">仅中文</span></div></div>
+        <div class="info-card"><div class="k" data-i18n="overview.period">测试时间</div><div class="v" data-i18n="overview.period.v">2026年8月20日 11:00（UTC+8）开启，结束时间请和对接工作人员确认</div></div>
+        <div class="info-card"><div class="k" data-i18n="overview.type">测试类型</div><div class="v" data-i18n="overview.type.v">限量删档不计费测试</div></div>
+        <div class="info-card"><div class="k" data-i18n="overview.platform">测试平台</div><div class="v" data-i18n="overview.platform.v">安卓端、PC端（双端数据互通，推荐用PC端体验）</div></div>
+        <div class="info-card"><div class="k" data-i18n="overview.voice">配音语言</div><div class="v" data-i18n="overview.voice.v">中文、日语（可在游戏设置界面切换）</div></div>
+        <div class="info-card"><div class="k" data-i18n="overview.lang">语言版本</div><div class="v"><span class="pill warn" data-i18n="overview.lang.v">中文</span></div></div>
       </div>
       <div class="callout warn">
         <span class="ct" data-i18n="overview.warn.title">⚠ 重要提示</span>
@@ -159,152 +155,257 @@ section.card{padding:20px}
       </div>
     </section>
 
-    <!-- 02 获取与安装 -->
+    <!-- 02 安装指引 -->
     <section class="card" id="install">
-      <h2><span data-i18n="nav.install">获取与安装</span></h2>
-      <p class="lead" data-i18n="install.lead">按以下步骤下载并安装测试包。</p>
+      <h2><span data-i18n="nav.install">安装指引</span></h2>
+      <p class="lead" data-i18n="install.lead">按以下步骤完成下载与安装。</p>
       <div class="steps">
-        <div class="step"><div class="dot"></div><div class="body"><b data-i18n="install.s1.t">接收测试账号与下载链接</b><p data-i18n="install.s1.p">由商务对接人通过邮件 / 私信发放，请勿外传。</p></div></div>
-        <div class="step"><div class="dot"></div><div class="body"><b data-i18n="install.s2.t">打开下载链接</b><p data-i18n="install.s2.p">根据设备选择对应安装包（示例：Android APK / iOS TestFlight / PC 安装包）。</p></div></div>
-        <div class="step"><div class="dot"></div><div class="body"><b data-i18n="install.s3.t">安装并完成配置</b><p data-i18n="install.s3.p">如遇地区 / 网络限制，请先连接指定网络环境（见下方说明）。</p></div></div>
+        <div class="step"><div class="dot"></div><div class="body"><b data-i18n="install.s1.t">接收测试账号与下载链接</b><p data-i18n="install.s1.p">由商务对接人通过邮件/私信发放，请勿外传。</p></div></div>
+        <div class="step"><div class="dot"></div><div class="body"><b data-i18n="install.s2.t">打开下载链接</b><p data-i18n="install.s2.p">下载对应安装包（推荐体验PC包）。</p></div></div>
+      </div>
+
+      <h3><span class="dot"></span><span data-i18n="install.pc.title">PC端安装指引</span></h3>
+      <div class="steps">
+        <div class="step"><div class="dot"></div><div class="body"><b data-i18n="install.pc.s1.t">第一步</b><p data-i18n="install.pc.s1.p">PC端启动器下载完成后，双击运行安装程序，按提示完成启动器安装。</p></div></div>
+      </div>
+      <img src="images/install-1.png" alt="PC端启动器安装" style="max-width:100%;border-radius:10px;border:1px solid var(--line);margin:12px 0;display:block">
+      <div class="steps">
+        <div class="step"><div class="dot"></div><div class="body"><b data-i18n="install.pc.s2.t">第二步</b><p data-i18n="install.pc.s2.p">点击右下方的【安装游戏】按钮，按照指引选择安装路径后点击【开始安装】，等待下载完成即可进入游戏。</p></div></div>
+      </div>
+      <img src="images/install-2.png" alt="启动器主界面 - 点击安装游戏" style="max-width:100%;border-radius:10px;border:1px solid var(--line);margin:12px 0;display:block">
+      <img src="images/install-3.png" alt="选择安装位置 - 点击开始安装" style="max-width:100%;border-radius:10px;border:1px solid var(--line);margin:12px 0;display:block">
+      <div class="callout tip">
+        <span class="ct" data-i18n="install.pc.tip.t">💡 小提示</span>
+        <span data-i18n="install.pc.tip.p">建议您将游戏安装在固态硬盘，可以显著提升游戏体验与流畅度。（安装界面中有 SSD 标识的为固态硬盘）</span>
       </div>
       <div class="callout info">
-        <span class="ct" data-i18n="install.net.title">网络与地区说明</span>
-        <span data-i18n="install.net.text">国服测试可能需连接中国大陆网络环境。请提前确认是否需使用加速器或指定线路。</span>
+        <span class="ct" data-i18n="install.android.t">安卓端</span>
+        <span data-i18n="install.android.p">安卓端的安装方法请另外联系工作人员指导，建议使用PC端体验。</span>
       </div>
-      <div class="gif-ph"><div class="play">▶</div><div class="lbl" data-i18n="install.gif">【示例】在此插入下载安装演示 GIF</div></div>
     </section>
 
-    <!-- 03 账号登录 -->
-    <section class="card" id="account">
-      <h2><span data-i18n="nav.account">账号登录</span></h2>
-      <p class="lead" data-i18n="account.lead">使用官方发放的测试专用账号登录。</p>
-      <div class="callout warn">
-        <span class="ct" data-i18n="account.warn.title">⚠ 实名认证说明</span>
-        <span data-i18n="account.warn.text">国服通常需要国内手机号与实名认证，海外用户无法自助完成。官方已为你准备测试专用账号，无需自行注册。</span>
-      </div>
-      <div class="info-grid">
-        <div class="info-card"><div class="k" data-i18n="account.acc">测试账号</div><div class="v">kol_xxx@example.com</div></div>
-        <div class="info-card"><div class="k" data-i18n="account.pwd">密码</div><div class="v">********（随邮件发放）</div></div>
-        <div class="info-card"><div class="k" data-i18n="account.rule">使用规范</div><div class="v">一人一号，禁止外借</div></div>
-      </div>
+    <!-- 03 PC端推荐配置 -->
+    <section class="card" id="spec">
+      <h2><span data-i18n="nav.spec">PC端推荐配置</span></h2>
+      <p class="lead" data-i18n="spec.lead">请确认您的设备满足以下配置要求。</p>
+      <table>
+        <thead><tr><th data-i18n="spec.component">硬件</th><th data-i18n="spec.min">最低配置</th><th data-i18n="spec.rec">推荐配置</th></tr></thead>
+        <tbody>
+          <tr><td data-i18n="spec.cpu">CPU</td><td>i5-9400F / R5 3500X 同等级或以上</td><td>i5-12400F / R5 5600X 同等级或以上</td></tr>
+          <tr><td data-i18n="spec.gpu">显卡</td><td>GTX 1050Ti / RX5600 XT 同等级或以上</td><td>RTX 2060 / RX6700XT 同等级或以上</td></tr>
+          <tr><td data-i18n="spec.ram">内存</td><td>8GB</td><td>16GB</td></tr>
+          <tr><td data-i18n="spec.storage">硬盘</td><td colspan="2" data-i18n="spec.storage.v">推荐使用固态硬盘安装游戏，并预留 16G 磁盘空间</td></tr>
+          <tr><td data-i18n="spec.os">系统</td><td colspan="2" data-i18n="spec.os.v">Windows 10 或以上</td></tr>
+        </tbody>
+      </table>
     </section>
 
     <!-- 04 界面翻译对照 -->
     <section class="card" id="ui">
-      <h2><span data-i18n="nav.ui">界面翻译对照</span><span class="tag" data-i18n="ui.core">核心</span></h2>
+      <h2><span data-i18n="nav.ui">界面翻译对照</span><span class="tag" data-i18n="ui.tag">核心</span></h2>
       <p class="lead" data-i18n="ui.lead">对照下方编号与截图标记，即可理解中文界面含义。</p>
+
+            <details class="accordion">
+        <summary><span data-i18n="ui.cat1">常用设置</span><span class="cnt">3</span></summary>
+        <div class="acc-body">
+<h3><span class="dot"></span><span data-i18n="ui.main.title">主界面（图文对照）</span></h3>
       <div class="figure">
         <div class="figure-img">
-          <span class="ph"><span class="icon">🖼</span><span data-i18n="ui.fig.placeholder">【示例】在此替换为主界面截图</span></span>
-          <span class="marker pulse" style="left:22%;top:28%" title="1">1</span>
-          <span class="marker" style="left:58%;top:40%" title="2">2</span>
-          <span class="marker" style="left:78%;top:70%" title="3">3</span>
+          <img src="images/main-game.jpg" alt="Main Screen (In-game)" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
         </div>
         <div class="figure-cap">
-          <div class="row"><span class="badge">1</span><span class="txt"><b data-i18n="ui.fig.m1.k">主菜单</b> — <span data-i18n="ui.fig.m1.v">Main Menu / メインメニュー / 메인 메뉴</span></span></div>
-          <div class="row"><span class="badge">2</span><span class="txt"><b data-i18n="ui.fig.m2.k">任务</b> — <span data-i18n="ui.fig.m2.v">Quests / クエスト / 퀘스트</span></span></div>
-          <div class="row"><span class="badge">3</span><span class="txt"><b data-i18n="ui.fig.m3.k">商城</b> — <span data-i18n="ui.fig.m3.v">Shop / ショップ / 상점</span></span></div>
+          <div class="row"><span class="hk">Esc</span><span class="txt" data-i18n="ui.main.hk1">游戏主面板</span></div>
+          <div class="row"><span class="hk">M</span><span class="txt" data-i18n="ui.main.hk2">地图</span></div>
+          <div class="row"><span class="hk">F2</span><span class="txt" data-i18n="ui.main.hk3">商城</span></div>
+          <div class="row"><span class="hk">F3</span><span class="txt" data-i18n="ui.main.hk4">活动</span></div>
+          <div class="row"><span class="hk">C</span><span class="txt" data-i18n="ui.main.hk5">将领界面</span></div>
+          <div class="row"><span class="hk">U</span><span class="txt" data-i18n="ui.main.hk6">编队</span></div>
+          <div class="row"><span class="hk">V</span><span class="txt" data-i18n="ui.main.hk7">挑战（副本）</span></div>
+          <div class="row"><span class="hk">H</span><span class="txt" data-i18n="ui.main.hk8">营地</span></div>
+          <div class="row"><span class="hk">B</span><span class="txt" data-i18n="ui.main.hk9">背包</span></div>
+          <div class="row"><span class="hk">L</span><span class="txt" data-i18n="ui.main.hk10">任务</span></div>
+          <div class="row"><span class="hk">Tab</span><span class="txt" data-i18n="ui.main.hk11">聊天</span></div>
         </div>
       </div>
-      <h3 data-i18n="ui.func.title">常用功能菜单对照</h3>
-      <table class="lang-table">
-        <thead><tr><th data-i18n="ui.func.zh">中文</th><th>English</th><th>日本語</th><th>한국어</th></tr></thead>
-        <tbody>
-          <tr><td>设置</td><td>Settings</td><td>設定</td><td>설정</td></tr>
-          <tr><td>背包</td><td>Inventory</td><td>バッグ</td><td>가방</td></tr>
-          <tr><td>邮件</td><td>Mail</td><td>メール</td><td>우편</td></tr>
-          <tr><td>公会</td><td>Guild</td><td>ギルド</td><td>길드</td></tr>
-          <tr><td>强化</td><td>Enhance</td><td>強化</td><td>강화</td></tr>
-          <tr><td>抽卡</td><td>Gacha / Draw</td><td>ガチャ</td><td>가챠</td></tr>
-          <tr><td>充值</td><td>Recharge</td><td>チャージ</td><td>충전</td></tr>
-        </tbody>
-      </table>
-      <p class="muted" style="color:var(--muted);font-size:12.5px" data-i18n="ui.fig.note">注：标记点位置请根据实际截图调整 left / top 百分比。</p>
-    </section>
 
-    <!-- 05 核心玩法 -->
-    <section class="card" id="gameplay">
-      <h2><span data-i18n="nav.gameplay">核心玩法</span></h2>
-      <p class="lead" data-i18n="gameplay.lead">一句话了解游戏核心循环。</p>
-      <div class="callout tip"><span class="ct" data-i18n="gameplay.loop.title">核心循环</span><span data-i18n="gameplay.loop.text">【示例】探索 → 战斗 → 养成 → 挑战更高难度内容。</span></div>
-      <h3 data-i18n="gameplay.sys.title">主要系统</h3>
-      <ul class="check">
-        <li data-i18n="gameplay.s1">主线 / 支线任务系统</li>
-        <li data-i18n="gameplay.s2">角色养成与强化系统</li>
-        <li data-i18n="gameplay.s3">多人协作 / 公会玩法</li>
-        <li data-i18n="gameplay.s4">特色玩法（示例：PVP 竞技场）</li>
-      </ul>
-    </section>
-
-    <!-- 06 快速上手 -->
-    <section class="card" id="quickstart">
-      <h2><span data-i18n="nav.quickstart">快速上手</span></h2>
-      <p class="lead" data-i18n="quickstart.lead">建议的前 30 分钟体验路线。</p>
-      <div class="steps">
-        <div class="step"><div class="dot"></div><div class="body"><b data-i18n="quickstart.s1.t">完成新手引导</b><p data-i18n="quickstart.s1.p">跟随新手引导熟悉基础操作与界面。</p></div></div>
-        <div class="step"><div class="dot"></div><div class="body"><b data-i18n="quickstart.s2.t">推进主线任务</b><p data-i18n="quickstart.s2.p">体验核心战斗与剧情（约 10 分钟）。</p></div></div>
-        <div class="step"><div class="dot"></div><div class="body"><b data-i18n="quickstart.s3.t">体验特色玩法</b><p data-i18n="quickstart.s3.p">尝试 PVP / 公会等亮点系统。</p></div></div>
+      <h3><span class="dot"></span><span data-i18n="ui.common.title">常用设置（图文对照）</span></h3>
+      <div class="figure">
+        <div class="figure-img">
+          <img src="images/common-settings.jpg" alt="Common Settings" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="figure-cap">
+          <div class="row"><span class="badge">1</span><span class="txt" data-i18n="ui.common.d1">跳过卡死</span></div>
+          <div class="row"><span class="badge">2</span><span class="txt" data-i18n="ui.common.d2">退出游戏</span></div>
+        </div>
       </div>
-    </section>
+    <h3><span class="dot"></span><span data-i18n="ui.voice.title">配音切换（图文对照）</span></h3>
+      <div class="figure">
+        <div class="figure-img">
+          <img src="images/voice-switch.jpg" alt="Voice Switch" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="figure-cap">
+          <div class="row"><span class="txt" data-i18n="ui.voice.d1">配音切换操作：Esc → 设置 → 语音语言（中文 / 日文）</span></div>
+        </div>
+      </div>
 
-    <!-- 07 术语表 -->
-    <section class="card" id="glossary">
-      <h2><span data-i18n="nav.glossary">术语表</span></h2>
-      <p class="lead" data-i18n="glossary.lead">游戏内常见术语对照（示例，请按实际补齐）。</p>
-      <table class="lang-table">
-        <thead><tr><th data-i18n="ui.func.zh">中文</th><th>English</th><th>日本語</th><th>한국어</th></tr></thead>
-        <tbody>
-          <tr><td>货币</td><td>Currency</td><td>通貨</td><td>재화</td></tr>
-          <tr><td>体力</td><td>Stamina</td><td>スタミナ</td><td>스태미나</td></tr>
-          <tr><td>钻石 / 金币</td><td>Diamond / Gold</td><td>ダイヤ / ゴールド</td><td>다이아 / 골드</td></tr>
-          <tr><td>十连抽</td><td>10x Draw</td><td>10連ガチャ</td><td>10연차</td></tr>
-          <tr><td>战力</td><td>Power / CP</td><td>戦力</td><td>전투력</td></tr>
-        </tbody>
-      </table>
-    </section>
+              </div>
+      </details>
+      <details class="accordion">
+        <summary><span data-i18n="ui.cat2">将领界面</span><span class="cnt">4</span></summary>
+        <div class="acc-body">
+<h3><span class="dot"></span><span data-i18n="ui.general1.title">将领界面1（图文对照）</span></h3>
+      <div class="figure">
+        <div class="figure-img">
+          <img src="images/general1.jpg" alt="General Screen 1" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="figure-cap">
+          <div class="row"><span class="badge">1</span><span class="txt" data-i18n="ui.general1.d1">点击此处查看详情</span></div>
+        </div>
+      </div>
 
-    <!-- 08 试玩任务 -->
-    <section class="card" id="tasks">
-      <h2><span data-i18n="nav.tasks">试玩任务</span></h2>
-      <p class="lead" data-i18n="tasks.lead">请在试玩中完成以下内容（如有指定）。</p>
-      <ul class="check">
-        <li data-i18n="tasks.t1">体验并展示新手引导与核心战斗</li>
-        <li data-i18n="tasks.t2">录制至少 3 分钟实机画面</li>
-        <li data-i18n="tasks.t3">在内容中露出游戏名、测试时间与预约链接</li>
-        <li data-i18n="tasks.t4">如遇 Bug，请截图并提交反馈表</li>
-      </ul>
-      <div class="callout info"><span class="ct" data-i18n="tasks.material.title">素材要求</span><span data-i18n="tasks.material.text">建议分辨率 1080p、横屏 16:9，画质清晰，避免遮挡关键 UI。</span></div>
-    </section>
+      <h3><span class="dot"></span><span data-i18n="ui.general2.title">将领界面2（图文对照）</span></h3>
+      <div class="figure">
+        <div class="figure-img">
+          <img src="images/general2.jpg" alt="General Screen 2" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="figure-cap">
+          <div class="row"><span class="badge">1</span><span class="txt" data-i18n="ui.general2.d1">进阶</span></div>
+          <div class="row"><span class="badge">2</span><span class="txt" data-i18n="ui.general2.d2">切换职业</span></div>
+          <div class="row"><span class="badge">3</span><span class="txt" data-i18n="ui.general2.d3">专精</span></div>
+          <div class="row"><span class="badge">4</span><span class="txt" data-i18n="ui.general2.d4">切换主将携带技能</span></div>
+          <div class="row"><span class="badge">5</span><span class="txt" data-i18n="ui.general2.d5">切换副将携带技能</span></div>
+          <div class="row"><span class="badge">6</span><span class="txt" data-i18n="ui.general2.d6">查看协力技</span></div>
+          <div class="row"><span class="badge">7</span><span class="txt" data-i18n="ui.general2.d7">士兵</span></div>
+          <div class="row"><span class="badge">8</span><span class="txt" data-i18n="ui.general2.d8">装备</span></div>
+          <div class="row"><span class="badge">9</span><span class="txt" data-i18n="ui.general2.d9">详细情况（查看详细属性）</span></div>
+          <div class="row"><span class="badge">10</span><span class="txt" data-i18n="ui.general2.d10">设为主力</span></div>
+        </div>
+      </div>
 
-    <!-- 09 发布规范 -->
-    <section class="card" id="rules">
-      <h2><span data-i18n="nav.rules">发布规范</span></h2>
-      <p class="lead" data-i18n="rules.lead">内容发布前请遵守以下规范。</p>
-      <div class="callout warn"><span class="ct" data-i18n="rules.embargo.title">解禁时间（Embargo）</span><span data-i18n="rules.embargo.text">请在指定时间后方可发布内容，具体时间以商务对接人通知为准。</span></div>
-      <ul class="check">
-        <li data-i18n="rules.r1">需按各国法规进行广告 / 合作标识披露（美国 FTC、日本景表法、韩国推荐标识等）</li>
-        <li data-i18n="rules.r2">仅在授权平台发布，Logo / 截图 / BGM 需在授权范围内使用</li>
-        <li data-i18n="rules.r3">不得公开未解禁内容或泄露测试包</li>
-      </ul>
-    </section>
+      <h3><span class="dot"></span><span data-i18n="ui.general3.title">将领界面3（图文对照）</span></h3>
+      <div class="figure">
+        <div class="figure-img">
+          <img src="images/general3.jpg" alt="General Screen 3" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="figure-cap">
+          <div class="row"><span class="badge">1</span><span class="txt" data-i18n="ui.general3.d1">更换士兵</span></div>
+        </div>
+      </div>
 
-    <!-- 10 FAQ -->
-    <section class="card" id="faq">
-      <h2><span data-i18n="nav.faq">FAQ</span></h2>
-      <p class="lead" data-i18n="faq.lead">常见问题。</p>
-      <details class="faq"><summary data-i18n="faq.q1">无法登录怎么办？</summary><div class="a" data-i18n="faq.a1">请确认使用官方发放的测试账号，并检查网络环境，重试后仍异常请截图联系支持。</div></details>
-      <details class="faq"><summary data-i18n="faq.q2">看不懂中文提示怎么办？</summary><div class="a" data-i18n="faq.a2">请参考本指南「界面翻译对照」章节，或截图联系支持获取帮助。</div></details>
-      <details class="faq"><summary data-i18n="faq.q3">遇到卡顿 / 闪退？</summary><div class="a" data-i18n="faq.a3">请记录设备型号与复现步骤，附截图提交反馈表。</div></details>
-    </section>
+      <h3><span class="dot"></span><span data-i18n="ui.general4.title">将领界面4（图文对照）</span></h3>
+      <div class="figure">
+        <div class="figure-img">
+          <img src="images/general4.jpg" alt="General Screen 4" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="figure-cap">
+          <div class="row"><span class="badge">1</span><span class="txt" data-i18n="ui.general4.d1">一键装配</span></div>
+          <div class="row"><span class="badge">2</span><span class="txt" data-i18n="ui.general4.d2">一键卸下</span></div>
+          <div class="row"><span class="badge">3</span><span class="txt" data-i18n="ui.general4.d3">锻造装备</span></div>
+        </div>
+      </div>
 
-    <!-- 11 支持联系 -->
-    <section class="card" id="support">
-      <h2><span data-i18n="nav.support">支持联系</span></h2>
-      <p class="lead" data-i18n="support.lead">如遇问题请通过以下方式联系。</p>
-      <div class="contact"><div class="k" data-i18n="support.tech">技术支持</div><div class="v">support@example.com</div></div>
-      <div class="contact"><div class="k" data-i18n="support.bd">商务对接</div><div class="v">bd@example.com</div></div>
-      <div class="contact"><div class="k" data-i18n="support.bug">Bug 反馈</div><div class="v"><a href="#" data-i18n="support.buglink">点击填写反馈表（示例链接）</a></div></div>
+              </div>
+      </details>
+      <details class="accordion">
+        <summary><span data-i18n="ui.cat3">战斗界面</span><span class="cnt">3</span></summary>
+        <div class="acc-body">
+<h3><span class="dot"></span><span data-i18n="ui.battleprep1.title">战前准备1（图文对照）</span></h3>
+      <div class="figure">
+        <div class="figure-img">
+          <img src="images/battle-prep1.jpg" alt="Battle Prep 1" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="figure-cap">
+          <div class="row"><span class="badge">1</span><span class="txt" data-i18n="ui.battleprep1.d1">战场信息</span></div>
+          <div class="row"><span class="badge">2</span><span class="txt" data-i18n="ui.battleprep1.d2">退出战斗</span></div>
+          <div class="row"><span class="badge">3</span><span class="txt" data-i18n="ui.battleprep1.d3">编辑队伍</span></div>
+          <div class="row"><span class="badge">4</span><span class="txt" data-i18n="ui.battleprep1.d4">危险范围</span></div>
+          <div class="row"><span class="badge">5</span><span class="txt" data-i18n="ui.battleprep1.d5">战斗回合</span></div>
+        </div>
+      </div>
+
+      <h3><span class="dot"></span><span data-i18n="ui.battleprep2.title">战前准备2（图文对照）</span></h3>
+      <div class="figure">
+        <div class="figure-img">
+          <img src="images/battle-prep2.jpg" alt="Battle Prep 2" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="figure-cap">
+          <div class="row"><span class="badge">1</span><span class="txt" data-i18n="ui.battleprep2.d1">胜利条件（注意胜利条件可能随剧情有所不同）</span></div>
+          <div class="row"><span class="badge">2</span><span class="txt" data-i18n="ui.battleprep2.d2">失败条件</span></div>
+        </div>
+      </div>
+
+      <h3><span class="dot"></span><span data-i18n="ui.battle.title">战斗界面（图文对照）</span></h3>
+      <div class="figure">
+        <div class="figure-img">
+          <img src="images/battle.jpg" alt="Battle Screen" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="figure-cap">
+          <div class="row"><span class="badge">1</span><span class="txt" data-i18n="ui.battle.d1">危险范围</span></div>
+          <div class="row"><span class="badge">2</span><span class="txt" data-i18n="ui.battle.d2">回合结束</span></div>
+          <div class="row"><span class="badge">3</span><span class="txt" data-i18n="ui.battle.d3">待机</span></div>
+        </div>
+      </div>
+
+              </div>
+      </details>
+      <details class="accordion">
+        <summary><span data-i18n="ui.cat4">其他</span><span class="cnt">2</span></summary>
+        <div class="acc-body">
+<h3><span class="dot"></span><span data-i18n="ui.challenge.title">挑战界面（图文对照）</span></h3>
+      <div class="figure">
+        <div class="figure-img">
+          <img src="images/challenge.jpg" alt="Challenge Screen" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="figure-cap">
+          <div class="row"><span class="badge">1</span><span class="txt" data-i18n="ui.challenge.d1">职业进阶材料</span></div>
+          <div class="row"><span class="badge">2</span><span class="txt" data-i18n="ui.challenge.d2">获取将领经验（注意另外 3 个副本均无法获得将领经验）</span></div>
+          <div class="row"><span class="badge">3</span><span class="txt" data-i18n="ui.challenge.d3">获取英雄武器装备</span></div>
+          <div class="row"><span class="badge">4</span><span class="txt" data-i18n="ui.challenge.d4">获取士兵强化素材</span></div>
+        </div>
+      </div>
+
+      <h3><span class="dot"></span><span data-i18n="ui.story.title">剧情界面（图文对照）</span></h3>
+      <div class="figure">
+        <div class="figure-img">
+          <img src="images/story-screen.jpg" alt="Story Screen" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="figure-cap">
+          <div class="row"><span class="badge">1</span><span class="txt" data-i18n="ui.story.d1">点击此处显示对话详情</span></div>
+        </div>
+      </div>
+
+              </div>
+      </details>
+</section>
+
+    <!-- 04 剧情简要介绍 -->
+    <section class="card" id="story">
+      <h2><span data-i18n="nav.story">剧情简要介绍</span></h2>
+      <p class="lead" data-i18n="story.lead">以下为剧情梗概（仅覆盖本次测试开放章节）。</p>
+
+      <div class="story-block">
+        <div class="ch"><span class="num">0</span><span data-i18n="story.ch0.title">序章</span></div>
+        <p data-i18n="story.ch0.p1">亡国的王子卡罗斯在龙之岛安卡拉贡的海岸醒来，失去了此前三年的所有记忆，他在龙族公主伊莱薇尔的帮助下筹备着复兴故土的计划。</p>
+        <p data-i18n="story.ch0.p2">卡罗斯失散的妹妹化名伊塔出现在龙之岛上，带来海之巨兽即将袭击岛屿的警告。唯一能击败这只怪物的，只有伴随着卡罗斯神秘出现的破邪之剑。</p>
+        <p data-i18n="story.ch0.p3">为了对抗海之巨兽，岛上的各路英雄在卡罗斯的身边集结了起来。</p>
+      </div>
+
+      <div class="story-block">
+        <div class="ch"><span class="num">1</span><span data-i18n="story.ch1.title">第一章</span></div>
+        <p data-i18n="story.ch1.p1">在伊莱薇尔的牵线下，卡罗斯和新结识的伙伴们一起前往卡拉德林，寻找自己曾经的伙伴特莉丝塔公爵，但特莉丝塔已经失去了关于卡罗斯的记忆。</p>
+        <p data-i18n="story.ch1.p2">卡拉德林正在秘密筹划一场反抗帝国、解救公主埃拉的斗争。为了达成这个目的，卡罗斯必须要想办法从帝国手中得到建立佣兵团武装的授权。</p>
+        <p data-i18n="story.ch1.p3">在争取帝国许可的过程中，他们得到了帝国陆军派系的信任，却和帝国的政务官群体交恶。在陆军将领安德烈亚斯的指示下，卡罗斯一行人带着支援物资前往对抗魔物的前线——尼隆多。</p>
+        <p data-i18n="story.ch1.p4">特莉丝塔决定将计就计，让卡罗斯把请求结盟的密信交给身在尼隆多的帝国海军提督玛薇娜，释放被囚禁在尼隆多的卡拉德林罪将吉尔福德。</p>
+        <p data-i18n="story.ch1.p5">被软禁的卡拉德林公主埃拉也决定不再委曲求全，做出了要和卡罗斯一行人一起前往尼隆多的决定。</p>
+      </div>
+
+      <div class="story-block">
+        <div class="ch"><span class="num">2</span><span data-i18n="story.ch2.title">第二章（部分）</span></div>
+        <p data-i18n="story.ch2.p1">主角一行人在浪潮镇下船后，遭遇了海妖兵团叛军的袭击，在叛军的身上发现了散布着黑暗气息的黑色羽毛。</p>
+        <p data-i18n="story.ch2.p2">在加芬克尔堡，一行人救下了被围困的海妖军团长雷蒂娅，暂时击退了使用黑色羽毛力量的海妖叛军副团长。</p>
+        <p data-i18n="story.ch2.p3">因布露提亚传来的指令，主角、迪哈尔特、雷蒂娅先行前往微光灯塔，在这里误入了兄贵神殿，之后遭遇了黑天使和叛军还有伊塔。</p>
+        <p class="muted" style="font-size:12.5px" data-i18n="story.ch2.note">（仅到本次测试开放章节）</p>
+      </div>
     </section>
   </main>
 </div>
@@ -317,202 +418,423 @@ section.card{padding:20px}
 
 <script>
 const I18N = {
-  zh: {
-    "app.title":"《XX游戏》国服 CBT 测试指南",
-    "app.subtitle":"海外 KOL 试玩说明书 · 封闭测试版本",
-    "nda.strong":"保密提示：",
-    "nda.text":"本测试包及全部内容均属保密信息，未经书面许可请勿对外传播或公开未解禁内容。",
-    "nav.title":"目录",
-    "nav.overview":"概览","nav.install":"获取与安装","nav.account":"账号登录","nav.ui":"界面翻译对照","nav.gameplay":"核心玩法","nav.quickstart":"快速上手","nav.glossary":"术语表","nav.tasks":"试玩任务","nav.rules":"发布规范","nav.faq":"FAQ","nav.support":"支持联系",
-    "overview.lead":"测试基本信息一览。请在试玩前仔细阅读。",
-    "overview.name":"游戏名称","overview.type":"类型 / 题材","overview.platform":"测试平台","overview.period":"测试时间","overview.phase":"测试阶段","overview.lang":"语言版本","overview.onlycn":"仅中文",
-    "overview.warn.title":"⚠ 重要提示","overview.warn.text":"当前游戏界面仅提供中文版本。请配合本指南「界面翻译对照」章节操作。",
-    "install.lead":"按以下步骤下载并安装测试包。",
-    "install.s1.t":"接收测试账号与下载链接","install.s1.p":"由商务对接人通过邮件 / 私信发放，请勿外传。",
-    "install.s2.t":"打开下载链接","install.s2.p":"根据设备选择对应安装包（示例：Android APK / iOS TestFlight / PC 安装包）。",
-    "install.s3.t":"安装并完成配置","install.s3.p":"如遇地区 / 网络限制，请先连接指定网络环境（见下方说明）。",
-    "install.net.title":"网络与地区说明","install.net.text":"国服测试可能需连接中国大陆网络环境。请提前确认是否需使用加速器或指定线路。",
-    "install.gif":"【示例】在此插入下载安装演示 GIF",
-    "account.lead":"使用官方发放的测试专用账号登录。",
-    "account.warn.title":"⚠ 实名认证说明","account.warn.text":"国服通常需要国内手机号与实名认证，海外用户无法自助完成。官方已为你准备测试专用账号，无需自行注册。",
-    "account.acc":"测试账号","account.pwd":"密码","account.rule":"使用规范",
-    "ui.core":"核心","ui.lead":"对照下方编号与截图标记，即可理解中文界面含义。",
-    "ui.fig.placeholder":"【示例】在此替换为主界面截图",
-    "ui.fig.m1.k":"主菜单","ui.fig.m1.v":"Main Menu / メインメニュー / 메인 메뉴",
-    "ui.fig.m2.k":"任务","ui.fig.m2.v":"Quests / クエスト / 퀘스트",
-    "ui.fig.m3.k":"商城","ui.fig.m3.v":"Shop / ショップ / 상점",
-    "ui.func.title":"常用功能菜单对照","ui.func.zh":"中文",
-    "ui.fig.note":"注：标记点位置请根据实际截图调整 left / top 百分比。",
-    "gameplay.lead":"一句话了解游戏核心循环。",
-    "gameplay.loop.title":"核心循环","gameplay.loop.text":"【示例】探索 → 战斗 → 养成 → 挑战更高难度内容。",
-    "gameplay.sys.title":"主要系统",
-    "gameplay.s1":"主线 / 支线任务系统","gameplay.s2":"角色养成与强化系统","gameplay.s3":"多人协作 / 公会玩法","gameplay.s4":"特色玩法（示例：PVP 竞技场）",
-    "quickstart.lead":"建议的前 30 分钟体验路线。",
-    "quickstart.s1.t":"完成新手引导","quickstart.s1.p":"跟随新手引导熟悉基础操作与界面。",
-    "quickstart.s2.t":"推进主线任务","quickstart.s2.p":"体验核心战斗与剧情（约 10 分钟）。",
-    "quickstart.s3.t":"体验特色玩法","quickstart.s3.p":"尝试 PVP / 公会等亮点系统。",
-    "glossary.lead":"游戏内常见术语对照（示例，请按实际补齐）。",
-    "tasks.lead":"请在试玩中完成以下内容（如有指定）。",
-    "tasks.t1":"体验并展示新手引导与核心战斗","tasks.t2":"录制至少 3 分钟实机画面","tasks.t3":"在内容中露出游戏名、测试时间与预约链接","tasks.t4":"如遇 Bug，请截图并提交反馈表",
-    "tasks.material.title":"素材要求","tasks.material.text":"建议分辨率 1080p、横屏 16:9，画质清晰，避免遮挡关键 UI。",
-    "rules.lead":"内容发布前请遵守以下规范。",
-    "rules.embargo.title":"解禁时间（Embargo）","rules.embargo.text":"请在指定时间后方可发布内容，具体时间以商务对接人通知为准。",
-    "rules.r1":"需按各国法规进行广告 / 合作标识披露（美国 FTC、日本景表法、韩国推荐标识等）",
-    "rules.r2":"仅在授权平台发布，Logo / 截图 / BGM 需在授权范围内使用","rules.r3":"不得公开未解禁内容或泄露测试包",
-    "faq.lead":"常见问题。",
-    "faq.q1":"无法登录怎么办？","faq.a1":"请确认使用官方发放的测试账号，并检查网络环境，重试后仍异常请截图联系支持。",
-    "faq.q2":"看不懂中文提示怎么办？","faq.a2":"请参考本指南「界面翻译对照」章节，或截图联系支持获取帮助。",
-    "faq.q3":"遇到卡顿 / 闪退？","faq.a3":"请记录设备型号与复现步骤，附截图提交反馈表。",
-    "support.lead":"如遇问题请通过以下方式联系。",
-    "support.tech":"技术支持","support.bd":"商务对接","support.bug":"Bug 反馈","support.buglink":"点击填写反馈表（示例链接）",
-    "footer.copy":"© 2026 游戏名称 保留所有权利","footer.confidential":"机密 · 仅供受邀 KOL 使用"
+  "zh": {
+    "app.title": "《梦战：剑之海》中国大陆首测操作指南",
+    "app.subtitle": "试玩说明书 · 封闭测试版本",
+    "nda.strong": "保密提示：",
+    "nda.text": "本操作指南仅做KOL/媒体安装、操作指引用途，未经书面许可请勿对外传播。",
+    "nav.title": "目录",
+    "nav.overview": "测试概览",
+    "nav.install": "安装指引",
+    "nav.spec": "PC端推荐配置",
+    "nav.ui": "界面翻译对照",
+    "nav.story": "剧情简要介绍",
+    "overview.lead": "本次测试的基本信息。",
+    "overview.type": "测试类型",
+    "overview.type.v": "限量删档不计费测试",
+    "overview.platform": "测试平台",
+    "overview.platform.v": "安卓端、PC端（双端数据互通，推荐使用PC端体验）",
+    "overview.period": "测试时间",
+    "overview.period.v": "2026年8月20日 11:00（UTC+8）开启，结束时间请和对接工作人员确认",
+    "overview.voice": "配音语言",
+    "overview.voice.v": "中文、日语（可在游戏设置界面切换）",
+    "overview.lang": "语言版本",
+    "overview.lang.v": "中文",
+    "overview.warn.title": "⚠ 重要提示",
+    "overview.warn.text": "首测版本非最终内容，音乐、配音、主支线任务均在持续制作中，不代表最终品质。",
+    "install.lead": "按以下步骤完成下载与安装。",
+    "install.s1.t": "接收测试账号与下载链接",
+    "install.s1.p": "由商务对接人通过邮件/私信发放，请勿外传。",
+    "install.s2.t": "打开下载链接",
+    "install.s2.p": "下载对应安装包（推荐体验PC包）。",
+    "install.pc.title": "PC端安装指引",
+    "install.pc.s1.t": "第一步",
+    "install.pc.s1.p": "PC端启动器下载完成后，同意左边第一行《隐私协议》和《用户协议》，双击右边按钮运行安装程序，按提示完成启动器安装。",
+    "install.pc.s2.t": "第二步",
+    "install.pc.s2.p": "点击右下方的【安装游戏】按钮，按照指引选择安装路径后点击【开始安装】，等待下载完成即可进入游戏。",
+    "install.pc.tip.t": "💡 小提示",
+    "install.pc.tip.p": "建议您将游戏安装在固态硬盘，可以显著提升游戏体验与流畅度。（安装界面中有 SSD 标识的为固态硬盘）",
+    "install.android.t": "关于安卓端",
+    "install.android.p": "安卓端的安装方法请另外联系工作人员指导，建议使用PC端体验。",
+    "spec.lead": "请确认您的设备满足以下配置要求。",
+    "spec.component": "硬件",
+    "spec.min": "最低配置",
+    "spec.rec": "推荐配置",
+    "spec.cpu": "CPU",
+    "spec.gpu": "显卡",
+    "spec.ram": "内存",
+    "spec.storage": "硬盘",
+    "spec.os": "系统",
+    "spec.storage.v": "推荐使用固态硬盘安装游戏，并预留 16G 磁盘空间",
+    "spec.os.v": "Windows 10 或以上",
+    "ui.tag": "核心",
+    "ui.lead": "对照下方编号与截图标记，即可理解中文界面含义。",
+    "ui.main.title": "主界面",
+    "ui.main.hk1": "游戏主面板",
+    "ui.main.hk2": "地图",
+    "ui.main.hk3": "商城",
+    "ui.main.hk4": "活动",
+    "ui.main.hk5": "将领界面",
+    "ui.main.hk6": "编队",
+    "ui.main.hk7": "挑战（副本）",
+    "ui.main.hk8": "营地",
+    "ui.main.hk9": "背包",
+    "ui.main.hk10": "任务",
+    "ui.main.hk11": "聊天",
+    "ui.story.title": "剧情界面",
+    "ui.story.d1": "点击此处显示对话详情",
+    "ui.general1.title": "将领界面1",
+    "ui.general1.d1": "点击此处查看详情",
+    "ui.general2.title": "将领界面2",
+    "ui.general2.d1": "进阶",
+    "ui.general2.d2": "切换职业",
+    "ui.general2.d3": "专精",
+    "ui.general2.d4": "切换主将携带技能",
+    "ui.general2.d5": "切换副将携带技能",
+    "ui.general2.d6": "查看协力技",
+    "ui.general2.d7": "士兵",
+    "ui.general2.d8": "装备",
+    "ui.general2.d9": "详细情况",
+    "ui.general2.d10": "设为主力",
+    "ui.general3.title": "将领界面3",
+    "ui.general3.d1": "更换士兵",
+    "ui.general4.title": "将领界面4",
+    "ui.general4.d1": "一键装配",
+    "ui.general4.d2": "一键卸下",
+    "ui.general4.d3": "锻造装备",
+    "ui.challenge.title": "挑战界面",
+    "ui.challenge.d1": "职业进阶材料",
+    "ui.challenge.d2": "获取将领经验（注意：另外 3 个副本均无法获得将领经验）",
+    "ui.challenge.d3": "获取英雄武器装备",
+    "ui.challenge.d4": "获取士兵强化素材",
+    "ui.battleprep1.title": "战前准备1",
+    "ui.battleprep1.d1": "战场信息",
+    "ui.battleprep1.d2": "退出战斗",
+    "ui.battleprep1.d3": "编辑队伍",
+    "ui.battleprep1.d4": "危险范围",
+    "ui.battleprep1.d5": "战斗回合",
+    "ui.battleprep2.title": "战前准备2",
+    "ui.battleprep2.d1": "胜利条件（注意：胜利条件可能随剧情有所不同）",
+    "ui.battleprep2.d2": "失败条件",
+    "ui.battle.title": "战斗界面",
+    "ui.battle.d1": "危险范围",
+    "ui.battle.d2": "回合结束",
+    "ui.battle.d3": "待机",
+    "ui.voice.title": "配音切换",
+    "ui.voice.d1": "配音切换操作：Esc → 设置 → 语音语言（中文：Chinese / 日文：Japanese）",
+    "ui.common.title": "常用设置",
+    "ui.common.d1": "跳过卡死",
+    "ui.common.d2": "退出游戏",
+    "ui.cat1": "常用设置",
+    "ui.cat2": "将领界面",
+    "ui.cat3": "战斗界面",
+    "ui.cat4": "其他",
+    "story.lead": "以下为剧情梗概（仅覆盖本次测试开放内容，所有角色/地名等均为暂译）。",
+    "story.ch0.title": "序章（所有角色/地名等均为暂译）",
+    "story.ch0.p1": "亡国的王子卡罗斯在龙之岛安卡拉贡的海岸醒来，失去了此前三年的所有记忆，他在龙族公主伊莱薇尔的帮助下筹备着复兴故土的计划。",
+    "story.ch0.p2": "卡罗斯失散的妹妹化名伊塔出现在龙之岛上，带来海之巨兽即将袭击岛屿的警告。唯一能击败这只怪物的，只有伴随着卡罗斯神秘出现的破邪之剑。",
+    "story.ch0.p3": "为了对抗海之巨兽，岛上的各路英雄在卡罗斯的身边集结了起来。",
+    "story.ch1.title": "第一章（所有角色/地名等均为暂译）",
+    "story.ch1.p1": "在伊莱薇尔的牵线下，卡罗斯和新结识的伙伴们一起前往卡拉德林，寻找自己曾经的伙伴特莉丝塔公爵，但特莉丝塔已经失去了关于卡罗斯的记忆。",
+    "story.ch1.p2": "卡拉德林正在秘密筹划一场反抗帝国、解救公主埃拉的斗争。为了达成这个目的，卡罗斯必须要想办法从帝国手中得到建立佣兵团武装的授权。",
+    "story.ch1.p3": "在争取帝国许可的过程中，他们得到了帝国陆军派系的信任，却和帝国的政务官群体交恶。在陆军将领安德烈亚斯的指示下，卡罗斯一行人带着支援物资前往对抗魔物的前线——尼隆多。",
+    "story.ch1.p4": "特莉丝塔决定将计就计，让卡罗斯把请求结盟的密信交给身在尼隆多的帝国海军提督玛薇娜，释放被囚禁在尼隆多的卡拉德林罪将吉尔福德。",
+    "story.ch1.p5": "被软禁的卡拉德林公主埃拉也决定不再委曲求全，做出了要和卡罗斯一行人一起前往尼隆多的决定。",
+    "story.ch2.title": "第二章（前期，所有角色/地名等均为暂译）",
+    "story.ch2.p1": "主角一行人在浪潮镇下船后，遭遇了海妖兵团叛军的袭击，在叛军的身上发现了散布着黑暗气息的黑色羽毛。",
+    "story.ch2.p2": "在加芬克尔堡，一行人救下了被围困的海妖军团长雷蒂娅，暂时击退了使用黑色羽毛力量的海妖叛军副团长。",
+    "story.ch2.p3": "因布露提亚传来的指令，主角、迪哈尔特、雷蒂娅先行前往微光灯塔，在这里误入了兄贵神殿，之后遭遇了黑天使和叛军还有伊塔。",
+    "story.ch2.note": "（到本次测试开放内容）",
+    "footer.copy": "©Zlongame ©extreme All Rights Reserved.",
+    "footer.confidential": "机密 · 仅供合作KOL/媒体使用"
   },
-  en: {
-    "app.title":"Project X — China CBT Test Guide",
-    "app.subtitle":"KOL Playtest Guide · Closed Beta",
-    "nda.strong":"Confidential: ","nda.text":"This test build and all its contents are confidential. Do not distribute or publish unreleased content without written permission.",
-    "nav.title":"Contents",
-    "nav.overview":"Overview","nav.install":"Download & Install","nav.account":"Account & Login","nav.ui":"UI Translation","nav.gameplay":"Core Gameplay","nav.quickstart":"Quick Start","nav.glossary":"Glossary","nav.tasks":"Playtest Tasks","nav.rules":"Publishing Rules","nav.faq":"FAQ","nav.support":"Support",
-    "overview.lead":"Key test information at a glance. Please read carefully before playing.",
-    "overview.name":"Game Title","overview.type":"Genre","overview.platform":"Platform","overview.period":"Test Period","overview.phase":"Phase","overview.lang":"Language","overview.onlycn":"Chinese Only",
-    "overview.warn.title":"⚠ Important","overview.warn.text":"The game UI is currently Chinese-only. Please follow the \"UI Translation\" section of this guide.",
-    "install.lead":"Follow the steps below to download and install the test build.",
-    "install.s1.t":"Receive test account & download link","install.s1.p":"Provided by your contact via email / DM. Do not share.",
-    "install.s2.t":"Open the download link","install.s2.p":"Choose the package for your device (e.g. Android APK / iOS TestFlight / PC installer).",
-    "install.s3.t":"Install and configure","install.s3.p":"If blocked by region / network, connect to the designated network first (see below).",
-    "install.net.title":"Network & Region","install.net.text":"The China server may require a mainland network. Confirm whether a VPN/accelerator or designated route is needed.",
-    "install.gif":"[Sample] Insert a download & install GIF here",
-    "account.lead":"Log in with the official test account provided.",
-    "account.warn.title":"⚠ Real-name Verification","account.warn.text":"The China server usually requires a mainland phone number and real-name verification, which overseas users cannot complete. A dedicated test account is provided for you — no self-registration needed.",
-    "account.acc":"Test Account","account.pwd":"Password","account.rule":"Usage",
-    "ui.core":"CORE","ui.lead":"Match the numbers below with the markers on the screenshot to understand the Chinese UI.",
-    "ui.fig.placeholder":"[Sample] Replace with main screen screenshot",
-    "ui.fig.m1.k":"Main Menu","ui.fig.m1.v":"Main Menu / メインメニュー / 메인 메뉴",
-    "ui.fig.m2.k":"Quests","ui.fig.m2.v":"Quests / クエスト / 퀘스트",
-    "ui.fig.m3.k":"Shop","ui.fig.m3.v":"Shop / ショップ / 상점",
-    "ui.func.title":"Common Menu Translation","ui.func.zh":"中文",
-    "ui.fig.note":"Note: adjust marker positions (left / top %) to match your actual screenshot.",
-    "gameplay.lead":"Understand the core loop in one sentence.",
-    "gameplay.loop.title":"Core Loop","gameplay.loop.text":"[Sample] Explore → Battle → Upgrade → Challenge harder content.",
-    "gameplay.sys.title":"Key Systems",
-    "gameplay.s1":"Main / Side quest systems","gameplay.s2":"Character upgrade & enhancement","gameplay.s3":"Co-op / Guild play","gameplay.s4":"Signature mode (e.g. PVP Arena)",
-    "quickstart.lead":"Recommended first-30-minutes route.",
-    "quickstart.s1.t":"Finish the tutorial","quickstart.s1.p":"Follow the tutorial to learn basic controls and UI.",
-    "quickstart.s2.t":"Progress the main quest","quickstart.s2.p":"Experience core combat and story (~10 min).",
-    "quickstart.s3.t":"Try signature modes","quickstart.s3.p":"Try PVP / Guild highlights.",
-    "glossary.lead":"Common in-game terms (sample — please complete with actual terms).",
-    "tasks.lead":"Please complete the following during your playtest (if specified).",
-    "tasks.t1":"Showcase the tutorial and core combat","tasks.t2":"Record at least 3 minutes of live gameplay","tasks.t3":"Mention the game title, test period and pre-registration link","tasks.t4":"If you hit a bug, screenshot it and submit the feedback form",
-    "tasks.material.title":"Asset Requirements","tasks.material.text":"1080p recommended, landscape 16:9, clear quality, avoid covering key UI.",
-    "rules.lead":"Please follow these rules before publishing.",
-    "rules.embargo.title":"Embargo","rules.embargo.text":"Publish only after the designated time as notified by your contact.",
-    "rules.r1":"Disclose the ad/partnership as required by local law (US FTC, Japan Premiums & Representations Act, Korean endorsement labeling, etc.)",
-    "rules.r2":"Publish only on authorized platforms; use Logo / screenshots / BGM within the licensed scope","rules.r3":"Do not reveal unreleased content or leak the test build",
-    "faq.lead":"Common questions.",
-    "faq.q1":"Can't log in?","faq.a1":"Confirm you're using the official test account and check your network. If it still fails, screenshot it and contact support.",
-    "faq.q2":"Can't understand the Chinese prompts?","faq.a2":"See the \"UI Translation\" section, or screenshot and contact support.",
-    "faq.q3":"Lag / crash?","faq.a3":"Note your device model and repro steps, attach screenshots, and submit the feedback form.",
-    "support.lead":"Contact us through the following channels.",
-    "support.tech":"Technical Support","support.bd":"Business Contact","support.bug":"Bug Report","support.buglink":"Fill in the feedback form (sample link)",
-    "footer.copy":"© 2026 Game Title. All rights reserved.","footer.confidential":"Confidential · For invited KOLs only"
+  "en": {
+    "app.title": "Project X — China CBT Test Guide",
+    "app.subtitle": "KOL Playtest Guide · Closed Beta",
+    "nda.strong": "Confidential: ",
+    "nda.text": "This test build and all its contents are confidential. Do not distribute or publish unreleased content without written permission.",
+    "nav.title": "Contents",
+    "nav.overview": "Overview",
+    "nav.install": "Installation",
+    "nav.spec": "Recommended PC Specs",
+    "nav.ui": "UI Translation",
+    "nav.story": "Story Summary",
+    "overview.lead": "Key information about this test.",
+    "overview.type": "Test Type",
+    "overview.type.v": "Limited, data-wipe, no-charge test",
+    "overview.platform": "Platform",
+    "overview.platform.v": "Android & PC (shared data across both; PC recommended)",
+    "overview.period": "Test Period",
+    "overview.period.v": "Starts Aug 20, 2026 11:00 (UTC+8); end time TBC with your contact",
+    "overview.voice": "Voice Languages",
+    "overview.voice.v": "Chinese, Japanese (switchable in game settings)",
+    "overview.lang": "Language",
+    "overview.lang.v": "Chinese",
+    "overview.warn.title": "⚠ Important",
+    "overview.warn.text": "The game UI is currently Chinese-only. Please follow the \"UI Translation\" section of this guide.",
+    "install.lead": "Follow these steps to download and install.",
+    "install.s1.t": "Receive test account & download link",
+    "install.s1.p": "Provided by your contact via email / DM. Do not share.",
+    "install.s2.t": "Open the download link",
+    "install.s2.p": "Download the installer (the PC build is recommended).",
+    "install.pc.title": "PC Installation Guide",
+    "install.pc.s1.t": "Step 1",
+    "install.pc.s1.p": "After the PC launcher download finishes, double-click the installer and follow the prompts to install the launcher.",
+    "install.pc.s1.img": "[Insert: launcher installation screenshot]",
+    "install.pc.s2.t": "Step 2",
+    "install.pc.s2.p": "Click the [Install Game] button at the bottom right, choose an install path, then click [Start Install] and wait for the download to finish.",
+    "install.pc.s2.img": "[Insert: game installation screenshot]",
+    "install.pc.tip.t": "💡 Tip",
+    "install.pc.tip.p": "Installing the game on an SSD will noticeably improve performance and smoothness. (Drives marked SSD in the installer are solid-state drives.)",
+    "install.android.t": "Android",
+    "install.android.p": "For Android installation, please contact our staff for guidance. PC is recommended.",
+    "spec.lead": "Please make sure your device meets the following requirements.",
+    "spec.component": "Component",
+    "spec.min": "Minimum",
+    "spec.rec": "Recommended",
+    "spec.cpu": "CPU",
+    "spec.gpu": "GPU",
+    "spec.ram": "RAM",
+    "spec.storage": "Storage",
+    "spec.os": "OS",
+    "spec.storage.v": "Install on an SSD and reserve 16GB of disk space",
+    "spec.os.v": "Windows 10 or later",
+    "ui.tag": "CORE",
+    "ui.lead": "Match the numbers below with the markers on the screenshots to understand the Chinese UI.",
+    "ui.main.title": "Main Screen (with labels)",
+    "ui.main.m1.k": "Character Info",
+    "ui.main.m1.v": "Character Info / キャラクター情報 / 캐릭터 정보",
+    "ui.main.m2.k": "Function Menu",
+    "ui.main.m2.v": "Function Menu / 機能メニュー / 기능 메뉴",
+    "ui.main.m3.k": "User ID",
+    "ui.main.m3.v": "User ID / ユーザーID / 계정 UID",
+    "ui.story.title": "Story Screen (with labels)",
+    "ui.story.placeholder": "[Sample] Replace with story screen screenshot",
+    "ui.story.m1.k": "Dialogue",
+    "ui.story.m1.v": "Dialogue / セリフ / 대사",
+    "ui.story.m2.k": "Auto Play",
+    "ui.story.m2.v": "Auto / オート / 자동",
+    "ui.story.m3.k": "Skip",
+    "ui.story.m3.v": "Skip / スキップ / 건너뛰기",
+    "ui.battle.title": "Battle Screen (with labels)",
+    "ui.battle.placeholder": "[Sample] Replace with battle screen screenshot",
+    "ui.battle.m1.k": "Joystick",
+    "ui.battle.m1.v": "Joystick / スティック / 조이스틱",
+    "ui.battle.m2.k": "Skill Buttons",
+    "ui.battle.m2.v": "Skills / スキル / 스킬",
+    "ui.battle.m3.k": "HP / Status",
+    "ui.battle.m3.v": "HP / Status / ステータス / 상태",
+    "ui.note": "Note: adjust marker positions (left / top %) to match your actual screenshots.",
+    "story.lead": "Story synopsis (covering chapters available in this test).",
+    "story.ch0.title": "Prologue",
+    "story.ch0.p1": "Prince Carlos of a fallen kingdom awakens on the shores of the dragon island Ankaragon, having lost all memories of the past three years. With the help of the dragon princess Elaviel, he prepares a plan to restore his homeland.",
+    "story.ch0.p2": "Carlos's long-lost sister, under the alias Ita, appears on the island and warns of an approaching Sea Beast. The only weapon capable of defeating this monster is the Exorcist Sword that mysteriously appeared alongside Carlos.",
+    "story.ch0.p3": "To face the Sea Beast, heroes from all over the island gather at Carlos's side.",
+    "story.ch1.title": "Chapter 1",
+    "story.ch1.p1": "Through Elaviel's introduction, Carlos and his new companions head to Karadrin to find his former ally Duke Trista — but Trista has lost all memory of Carlos.",
+    "story.ch1.p2": "Karadrin is secretly plotting a rebellion against the Empire to free Princess Ela. To achieve this, Carlos must find a way to obtain authorization from the Empire to raise a mercenary corps.",
+    "story.ch1.p3": "While seeking the Empire's approval, they earn the trust of the Imperial Army faction but antagonize the Empire's civil officials. Under General Andreas's orders, Carlos's party carries supplies to the front line against monsters — Nironado.",
+    "story.ch1.p4": "Trista decides to turn the tables, having Carlos deliver a secret alliance letter to Imperial Navy Admiral Mavina in Nironado, to free the imprisoned Karadrin general Gilford.",
+    "story.ch1.p5": "The captive Karadrin Princess Ela also resolves to stop enduring, deciding to join Carlos's party on their journey to Nironado.",
+    "story.ch2.title": "Chapter 2 (Partial)",
+    "story.ch2.p1": "After disembarking at Wave Town, the party is ambushed by rebels of the Siren Corps. On the rebels they find black feathers radiating a dark aura.",
+    "story.ch2.p2": "At Gafinkel Fort, they rescue the besieged Siren Corps captain Retia and temporarily repel the rebel vice-captain, who wields the power of the black feathers.",
+    "story.ch2.p3": "Following orders from Brutea, the protagonist, Dihalt, and Retia head first to Glimmer Lighthouse. There they stumble into the Aniki Shrine, then encounter the Dark Angel, the rebels, and Ita.",
+    "story.ch2.note": "(Content up to the chapters available in this test)",
+    "footer.copy": "© 2026 Game Title. All rights reserved.",
+    "footer.confidential": "Confidential · For invited KOLs only"
   },
-  ja: {
-    "app.title":"『XXゲーム』中国版 CBT テストガイド",
-    "app.subtitle":"海外 KOL 試遊ガイド · クローズドβ版",
-    "nda.strong":"機密保持：","nda.text":"本テストパックおよび全コンテンツは機密情報です。書面による許可なく未公開コンテンツを配布・公開しないでください。",
-    "nav.title":"目次",
-    "nav.overview":"概要","nav.install":"入手とインストール","nav.account":"アカウント・ログイン","nav.ui":"UI翻訳ガイド","nav.gameplay":"コアゲームプレイ","nav.quickstart":"クイックスタート","nav.glossary":"用語集","nav.tasks":"試遊タスク","nav.rules":"公開ガイドライン","nav.faq":"FAQ","nav.support":"サポート",
-    "overview.lead":"テスト基本情報の一覧です。試遊前にご確認ください。",
-    "overview.name":"ゲーム名","overview.type":"ジャンル","overview.platform":"プラットフォーム","overview.period":"テスト期間","overview.phase":"段階","overview.lang":"言語","overview.onlycn":"中国語のみ",
-    "overview.warn.title":"⚠ 重要","overview.warn.text":"現在ゲームUIは中国語のみです。本ガイドの「UI翻訳ガイド」を参照しながら操作してください。",
-    "install.lead":"以下の手順でテストパックをダウンロード・インストールします。",
-    "install.s1.t":"テストアカウントとリンクを受け取る","install.s1.p":"担当者からメール / DM で発行されます。共有しないでください。",
-    "install.s2.t":"ダウンロードリンクを開く","install.s2.p":"端末に応じたパッケージを選択（例：Android APK / iOS TestFlight / PC インストーラー）。",
-    "install.s3.t":"インストールと設定","install.s3.p":"地域・ネットワーク制限がある場合は、先に指定のネットワークへ接続してください（下記参照）。",
-    "install.net.title":"ネットワークと地域","install.net.text":"中国版テストは中国本土のネットワーク環境が必要な場合があります。VPN・アクセラレータの要否を事前に確認してください。",
-    "install.gif":"【サンプル】ダウンロード・インストールのデモGIFをここに挿入",
-    "account.lead":"公式発行のテスト専用アカウントでログインします。",
-    "account.warn.title":"⚠ 実名認証について","account.warn.text":"中国版は通常、中国の携帯番号と実名認証が必要で、海外ユーザーは自力で完了できません。専用テストアカウントをご用意していますので、登録は不要です。",
-    "account.acc":"テストアカウント","account.pwd":"パスワード","account.rule":"利用規約",
-    "ui.core":"コア","ui.lead":"下の番号とスクリーンショットのマーカーを照合すれば、中国語UIの意味を理解できます。",
-    "ui.fig.placeholder":"【サンプル】メイン画面のスクリーンショットに差し替え",
-    "ui.fig.m1.k":"メインメニュー","ui.fig.m1.v":"Main Menu / メインメニュー / 메인 메뉴",
-    "ui.fig.m2.k":"クエスト","ui.fig.m2.v":"Quests / クエスト / 퀘스트",
-    "ui.fig.m3.k":"ショップ","ui.fig.m3.v":"Shop / ショップ / 상점",
-    "ui.func.title":"主要メニュー翻訳","ui.func.zh":"中文",
-    "ui.fig.note":"注：マーカー位置は実際のスクリーンショットに合わせて left / top % を調整してください。",
-    "gameplay.lead":"コアループを一文で理解。",
-    "gameplay.loop.title":"コアループ","gameplay.loop.text":"【サンプル】探索 → 戦闘 → 育成 → 高難度コンテンツへ挑戦。",
-    "gameplay.sys.title":"主要システム",
-    "gameplay.s1":"メイン / サブクエスト","gameplay.s2":"キャラ育成と強化","gameplay.s3":"協力 / ギルドプレイ","gameplay.s4":"特色モード（例：PVPアリーナ）",
-    "quickstart.lead":"推奨の最初30分ルート。",
-    "quickstart.s1.t":"チュートリアルを完了","quickstart.s1.p":"基本操作とUIを学びます。",
-    "quickstart.s2.t":"メインクエストを進める","quickstart.s2.p":"コア戦闘とストーリーを体験（約10分）。",
-    "quickstart.s3.t":"特色モードを体験","quickstart.s3.p":"PVP・ギルドなどを試します。",
-    "glossary.lead":"ゲーム内のよく使う用語対照（サンプル。実際の用語で補完してください）。",
-    "tasks.lead":"試遊中に以下を完了してください（指定がある場合）。",
-    "tasks.t1":"チュートリアルとコア戦闘を紹介","tasks.t2":"実機映像を3分以上録画","tasks.t3":"ゲーム名・テスト期間・予約リンクを露出","tasks.t4":"不具合はスクリーンショットを添えて報告",
-    "tasks.material.title":"素材要件","tasks.material.text":"1080p推奨、横16:9、画質クリア、重要UIを隠さない。",
-    "rules.lead":"公開前に以下のルールを守ってください。",
-    "rules.embargo.title":"解禁時間（Embargo）","rules.embargo.text":"担当者から通知された指定時間以降に公開してください。",
-    "rules.r1":"各国の法令に基づき広告・提携表示を行う（米FTC、日本の景品表示法、韓国の推奨表示など）",
-    "rules.r2":"許可されたプラットフォームのみで公開し、ロゴ・スクリーンショット・BGMは許諾範囲内で使用","rules.r3":"未公開コンテンツやテストパックを漏えいしない",
-    "faq.lead":"よくある質問。",
-    "faq.q1":"ログインできない場合は？","faq.a1":"公式テストアカウントの使用とネットワークを確認し、再試行後も異常ならスクリーンショットを添えてサポートへ。",
-    "faq.q2":"中国語の表示が読めない場合は？","faq.a2":"本ガイドの「UI翻訳ガイド」を参照するか、スクリーンショットを添えてサポートへ。",
-    "faq.q3":"カクつき / クラッシュは？","faq.a3":"端末モデルと再現手順を記録し、スクリーンショットを添えて報告してください。",
-    "support.lead":"問題があれば以下からご連絡ください。",
-    "support.tech":"テクニカルサポート","support.bd":"ビジネス窓口","support.bug":"バグ報告","support.buglink":"報告フォームを記入（サンプルリンク）",
-    "footer.copy":"© 2026 ゲーム名 All rights reserved.","footer.confidential":"機密 · 招待KOL限定"
+  "ja": {
+    "app.title": "『XXゲーム』中国版 CBT テストガイド",
+    "app.subtitle": "海外 KOL 試遊ガイド · クローズドβ版",
+    "nda.strong": "機密保持：",
+    "nda.text": "本テストパックおよび全コンテンツは機密情報です。書面による許可なく未公開コンテンツを配布・公開しないでください。",
+    "nav.title": "目次",
+    "nav.overview": "テスト概要",
+    "nav.install": "インストールガイド",
+    "nav.spec": "推奨PCスペック",
+    "nav.ui": "UI翻訳ガイド",
+    "nav.story": "ストーリー紹介",
+    "overview.lead": "今回のテストの基本情報です。",
+    "overview.type": "テスト種別",
+    "overview.type.v": "数量限定・データ削除・無課金テスト",
+    "overview.platform": "プラットフォーム",
+    "overview.platform.v": "Android・PC（両端末データ連携、PC推奨）",
+    "overview.period": "テスト期間",
+    "overview.period.v": "2026年8月20日 11:00（UTC+8）開始、終了時間は担当者にご確認ください",
+    "overview.voice": "ボイス言語",
+    "overview.voice.v": "中国語・日本語（ゲーム内設定で切替可能）",
+    "overview.lang": "言語",
+    "overview.lang.v": "中国語",
+    "overview.warn.title": "⚠ 重要",
+    "overview.warn.text": "現在ゲームUIは中国語のみです。本ガイドの「UI翻訳ガイド」を参照しながら操作してください。",
+    "install.lead": "以下の手順でダウンロードとインストールを行います。",
+    "install.s1.t": "テストアカウントとリンクを受け取る",
+    "install.s1.p": "担当者からメール/私信で発行されます。共有しないでください。",
+    "install.s2.t": "ダウンロードリンクを開く",
+    "install.s2.p": "インストーラーをダウンロード（PC版を推奨）。",
+    "install.pc.title": "PC版インストールガイド",
+    "install.pc.s1.t": "ステップ1",
+    "install.pc.s1.p": "PC版ランチャーのダウンロード完了後、インストーラーをダブルクリックし、画面の指示に従ってランチャーをインストールします。",
+    "install.pc.s1.img": "【ここにランチャーインストールのスクリーンショットを挿入】",
+    "install.pc.s2.t": "ステップ2",
+    "install.pc.s2.p": "右下の【ゲームをインストール】ボタンをクリックし、インストール先を選択して【インストール開始】をクリック、ダウンロード完了まで待ちます。",
+    "install.pc.s2.img": "【ここにゲームインストールのスクリーンショットを挿入】",
+    "install.pc.tip.t": "💡 ヒント",
+    "install.pc.tip.p": "ゲームをSSDにインストールすると、体感と快適さが大幅に向上します。（インストール画面でSSD表示のあるドライブがソリッドステートです）",
+    "install.android.t": "Android版",
+    "install.android.p": "Android版のインストール方法はスタッフまでお問い合わせください。PC版を推奨します。",
+    "spec.lead": "お使いの端末が以下の要件を満たしているかご確認ください。",
+    "spec.component": "パーツ",
+    "spec.min": "最低",
+    "spec.rec": "推奨",
+    "spec.cpu": "CPU",
+    "spec.gpu": "GPU",
+    "spec.ram": "メモリ",
+    "spec.storage": "ストレージ",
+    "spec.os": "OS",
+    "spec.storage.v": "SSDにインストールし、16GBの空き容量を確保",
+    "spec.os.v": "Windows 10 以上",
+    "ui.tag": "コア",
+    "ui.lead": "下の番号とスクリーンショットのマーカーを照合すれば、中国語UIの意味を理解できます。",
+    "ui.main.title": "メイン画面（図解）",
+    "ui.main.m1.k": "キャラクター情報",
+    "ui.main.m1.v": "Character Info / キャラクター情報 / 캐릭터 정보",
+    "ui.main.m2.k": "機能メニュー",
+    "ui.main.m2.v": "Function Menu / 機能メニュー / 기능 메뉴",
+    "ui.main.m3.k": "ユーザーID",
+    "ui.main.m3.v": "User ID / ユーザーID / 계정 UID",
+    "ui.story.title": "ストーリー画面（図解）",
+    "ui.story.placeholder": "【サンプル】ストーリー画面のスクリーンショットに差し替え",
+    "ui.story.m1.k": "セリフ",
+    "ui.story.m1.v": "Dialogue / セリフ / 대사",
+    "ui.story.m2.k": "オート",
+    "ui.story.m2.v": "Auto / オート / 자동",
+    "ui.story.m3.k": "スキップ",
+    "ui.story.m3.v": "Skip / スキップ / 건너뛰기",
+    "ui.battle.title": "バトル画面（図解）",
+    "ui.battle.placeholder": "【サンプル】バトル画面のスクリーンショットに差し替え",
+    "ui.battle.m1.k": "スティック",
+    "ui.battle.m1.v": "Joystick / スティック / 조이스틱",
+    "ui.battle.m2.k": "スキルボタン",
+    "ui.battle.m2.v": "Skills / スキル / 스킬",
+    "ui.battle.m3.k": "HP / ステータス",
+    "ui.battle.m3.v": "HP / Status / ステータス / 상태",
+    "ui.note": "注：マーカー位置は実際のスクリーンショットに合わせて left / top % を調整してください。",
+    "story.lead": "ストーリーのあらすじです（今回のテストで公開される章まで）。",
+    "story.ch0.title": "プロローグ",
+    "story.ch0.p1": "亡国の王子カーロスは竜の島アンカラゴンの海岸で目覚め、この三年間の記憶をすべて失っていた。彼は竜族の王女イレヴィエルの助けを得て、故郷復興の計画を進めていた。",
+    "story.ch0.p2": "離れ離れになっていた妹がイータと名を変えて島に現れ、海の巨獣が島を襲うという警告をもたらす。この怪物を倒せるのは、カーロスとともに謎の出現をした破邪の剣だけだった。",
+    "story.ch0.p3": "海の巨獣に立ち向かうため、島中の英雄たちがカーロスのもとに集結する。",
+    "story.ch1.title": "第一章",
+    "story.ch1.p1": "イレヴィエルの仲介で、カーロスは新たな仲間たちとともにカラドリンへ向かい、かつての仲間トリスタ公爵を探す。しかしトリスタはカーロスに関する記憶を失っていた。",
+    "story.ch1.p2": "カラドリンは帝国に抗い、王女エラを救い出す闘いを密かに計画していた。その目的のため、カーロスは帝国から傭兵団の武装を設立する許可を得る方法を探らねばならない。",
+    "story.ch1.p3": "帝国の許可を求める中、彼らは帝国陸軍派の信頼を得る一方、帝国の政務官たちと敵対する。陸軍の将軍アンドレアスからの指示で、カーロス一行は支援物資を携え、魔物との前線ニロンドへ向かう。",
+    "story.ch1.p4": "トリスタは計略を逆手に取り、カーロスに同盟を求める密書をニロンドにいる帝国海軍提督マヴィナへ渡させ、ニロンドに囚われたカラドリンの罪将ギルフォードを解放させようとする。",
+    "story.ch1.p5": "軟禁されていたカラドリンの王女エラも、もはや屈することをやめ、カーロス一行とともにニロンドへ向かう決意をする。",
+    "story.ch2.title": "第二章（一部）",
+    "story.ch2.p1": "一行は波の町で下船した後、海妖兵団の反乱軍の襲撃を受け、反乱軍の身から闇の気を放つ黒い羽根を発見する。",
+    "story.ch2.p2": "ガフィンケル砦では、包囲された海妖兵団長レティアを救出し、黒い羽根の力を使う海妖反乱軍の副団長をひとまず撃退する。",
+    "story.ch2.p3": "ブルーティアからの指令により、主人公・ディハルト・レティアは先に微光の灯台へ向かう。そこで誤ってアニキ神殿に迷い込み、黒天使と反乱軍、そしてイータと遭遇する。",
+    "story.ch2.note": "（今回のテストで公開されている章まで）",
+    "footer.copy": "© 2026 ゲーム名 All rights reserved.",
+    "footer.confidential": "機密 · 招待KOL限定"
   },
-  ko: {
-    "app.title":"『XX게임』중국서버 CBT 테스트 가이드",
-    "app.subtitle":"해외 KOL 체험 가이드 · 클로즈드 베타",
-    "nda.strong":"기밀 유지: ","nda.text":"본 테스트 패키지 및 모든 콘텐츠는 기밀 정보입니다. 서면 허가 없이 미공개 콘텐츠를 배포·공개하지 마세요.",
-    "nav.title":"목차",
-    "nav.overview":"개요","nav.install":"다운로드 및 설치","nav.account":"계정·로그인","nav.ui":"UI 번역 가이드","nav.gameplay":"핵심 플레이","nav.quickstart":"빠른 시작","nav.glossary":"용어집","nav.tasks":"체험 태스크","nav.rules":"공개 가이드라인","nav.faq":"FAQ","nav.support":"지원",
-    "overview.lead":"테스트 기본 정보 요약입니다. 플레이 전 확인하세요.",
-    "overview.name":"게임명","overview.type":"장르","overview.platform":"플랫폼","overview.period":"테스트 기간","overview.phase":"단계","overview.lang":"언어","overview.onlycn":"중국어만",
-    "overview.warn.title":"⚠ 중요","overview.warn.text":"현재 게임 UI는 중국어만 제공됩니다. 본 가이드의 'UI 번역 가이드'를 참고하세요.",
-    "install.lead":"아래 단계에 따라 테스트 패키지를 다운로드·설치하세요.",
-    "install.s1.t":"테스트 계정·링크 수신","install.s1.p":"담당자가 이메일/DM으로 발급합니다. 공유하지 마세요.",
-    "install.s2.t":"다운로드 링크 열기","install.s2.p":"기기에 맞는 패키지 선택(예: Android APK / iOS TestFlight / PC 설치 파일).",
-    "install.s3.t":"설치 및 설정","install.s3.p":"지역·네트워크 제한 시 지정 네트워크에 먼저 연결하세요(아래 참고).",
-    "install.net.title":"네트워크·지역","install.net.text":"중국서버 테스트는 중국 본토 네트워크가 필요할 수 있습니다. VPN/가속기 필요 여부를 미리 확인하세요.",
-    "install.gif":"[샘플] 다운로드·설치 데모 GIF 삽입 위치",
-    "account.lead":"공식 발급 테스트 전용 계정으로 로그인하세요.",
-    "account.warn.title":"⚠ 실명 인증 안내","account.warn.text":"중국서버는 보통 중국 휴대폰 번호와 실명 인증이 필요해 해외 사용자는 직접 완료할 수 없습니다. 전용 테스트 계정을 제공드리니 별도 가입이 필요 없습니다.",
-    "account.acc":"테스트 계정","account.pwd":"비밀번호","account.rule":"이용 규칙",
-    "ui.core":"핵심","ui.lead":"아래 번호와 스크린샷 마커를 맞춰 보면 중국어 UI 의미를 이해할 수 있습니다.",
-    "ui.fig.placeholder":"[샘플] 메인 화면 스크린샷으로 교체",
-    "ui.fig.m1.k":"메인 메뉴","ui.fig.m1.v":"Main Menu / メインメニュー / 메인 메뉴",
-    "ui.fig.m2.k":"퀘스트","ui.fig.m2.v":"Quests / クエスト / 퀘스트",
-    "ui.fig.m3.k":"상점","ui.fig.m3.v":"Shop / ショップ / 상점",
-    "ui.func.title":"주요 메뉴 번역","ui.func.zh":"中文",
-    "ui.fig.note":"참고: 마커 위치는 실제 스크린샷에 맞게 left / top %를 조정하세요.",
-    "gameplay.lead":"핵심 루프를 한 문장으로 이해하세요.",
-    "gameplay.loop.title":"핵심 루프","gameplay.loop.text":"[샘플] 탐험 → 전투 → 육성 → 더 어려운 콘텐츠 도전.",
-    "gameplay.sys.title":"주요 시스템",
-    "gameplay.s1":"메인/서브 퀘스트","gameplay.s2":"캐릭터 육성·강화","gameplay.s3":"협동/길드 플레이","gameplay.s4":"특색 모드(예: PVP 아레나)",
-    "quickstart.lead":"추천 첫 30분 루트.",
-    "quickstart.s1.t":"튜토리얼 완료","quickstart.s1.p":"기본 조작과 UI를 익힙니다.",
-    "quickstart.s2.t":"메인 퀘스트 진행","quickstart.s2.p":"핵심 전투와 스토리를 체험(약 10분).",
-    "quickstart.s3.t":"특색 모드 체험","quickstart.s3.p":"PVP·길드 등을 시도합니다.",
-    "glossary.lead":"게임 내 자주 쓰는 용어 대조(샘플. 실제 용어로 보완하세요).",
-    "tasks.lead":"체험 중 다음을 완료하세요(지정된 경우).",
-    "tasks.t1":"튜토리얼·핵심 전투 소개","tasks.t2":"실기 영상 3분 이상 녹화","tasks.t3":"게임명·테스트 기간·예약 링크 노출","tasks.t4":"버그 발생 시 스크린샷과 함께 신고",
-    "tasks.material.title":"소재 요구사항","tasks.material.text":"1080p 권장, 가로 16:9, 선명한 화질, 주요 UI 가리지 않기.",
-    "rules.lead":"공개 전 아래 규칙을 지켜주세요.",
-    "rules.embargo.title":"해금 시간(Embargo)","rules.embargo.text":"담당자가 안내한 지정 시간 이후에 공개하세요.",
-    "rules.r1":"각국 법령에 따라 광고·제휴 표기를 하세요(미국 FTC, 일본 경품표시법, 한국 추천 표기 등)",
-    "rules.r2":"허가된 플랫폼에서만 공개하고, 로고·스크린샷·BGM은 허가 범위 내 사용","rules.r3":"미공개 콘텐츠 또는 테스트 패키지를 유출하지 않기",
-    "faq.lead":"자주 묻는 질문.",
-    "faq.q1":"로그인이 안 되나요?","faq.a1":"공식 테스트 계정 사용 여부와 네트워크를 확인하고, 재시도 후에도 문제가 있으면 스크린샷과 함께 문의하세요.",
-    "faq.q2":"중국어 표시를 읽을 수 없나요?","faq.a2":"본 가이드의 'UI 번역 가이드'를 참고하거나 스크린샷과 함께 문의하세요.",
-    "faq.q3":"렉/크래시가 발생하나요?","faq.a3":"기기 모델과 재현 절차를 기록하고 스크린샷을 첨부해 신고하세요.",
-    "support.lead":"문제가 있으면 아래로 연락하세요.",
-    "support.tech":"기술 지원","support.bd":"비즈니스 담당","support.bug":"버그 신고","support.buglink":"신고 양식 작성(샘플 링크)",
-    "footer.copy":"© 2026 게임명 All rights reserved.","footer.confidential":"기밀 · 초대 KOL 전용"
+  "ko": {
+    "app.title": "『XX게임』중국서버 CBT 테스트 가이드",
+    "app.subtitle": "해외 KOL 체험 가이드 · 클로즈드 베타",
+    "nda.strong": "기밀 유지: ",
+    "nda.text": "본 테스트 패키지 및 모든 콘텐츠는 기밀 정보입니다. 서면 허가 없이 미공개 콘텐츠를 배포·공개하지 마세요.",
+    "nav.title": "목차",
+    "nav.overview": "테스트 개요",
+    "nav.install": "설치 가이드",
+    "nav.spec": "권장 PC 사양",
+    "nav.ui": "UI 번역 가이드",
+    "nav.story": "스토리 소개",
+    "overview.lead": "이번 테스트의 기본 정보입니다.",
+    "overview.type": "테스트 유형",
+    "overview.type.v": "한정 수량·데이터 삭제·무과금 테스트",
+    "overview.platform": "플랫폼",
+    "overview.platform.v": "Android·PC(양쪽 데이터 연동, PC 권장)",
+    "overview.period": "테스트 기간",
+    "overview.period.v": "2026년 8월 20일 11:00(UTC+8) 시작, 종료 시간은 담당자에게 확인",
+    "overview.voice": "음성 언어",
+    "overview.voice.v": "중국어·일본어(게임 설정에서 전환 가능)",
+    "overview.lang": "언어",
+    "overview.lang.v": "중국어",
+    "overview.warn.title": "⚠ 중요",
+    "overview.warn.text": "현재 게임 UI는 중국어만 제공됩니다. 본 가이드의 'UI 번역 가이드'를 참고하세요.",
+    "install.lead": "아래 단계에 따라 다운로드와 설치를 완료하세요.",
+    "install.s1.t": "테스트 계정·링크 수신",
+    "install.s1.p": "담당자가 이메일/쪽지로 발급합니다. 공유하지 마세요.",
+    "install.s2.t": "다운로드 링크 열기",
+    "install.s2.p": "설치 파일을 다운로드(PC 버전 권장).",
+    "install.pc.title": "PC 설치 가이드",
+    "install.pc.s1.t": "1단계",
+    "install.pc.s1.p": "PC 런처 다운로드 완료 후 설치 프로그램을 더블클릭하고 안내에 따라 런처 설치를 완료합니다.",
+    "install.pc.s1.img": "[여기에 런처 설치 스크린샷 삽입]",
+    "install.pc.s2.t": "2단계",
+    "install.pc.s2.p": "오른쪽 아래 [게임 설치] 버튼을 클릭하고 설치 경로를 선택한 뒤 [설치 시작]을 클릭, 다운로드가 끝날 때까지 기다립니다.",
+    "install.pc.s2.img": "[여기에 게임 설치 스크린샷 삽입]",
+    "install.pc.tip.t": "💡 팁",
+    "install.pc.tip.p": "게임을 SSD에 설치하면 체감과 쾌적함이 크게 향상됩니다. (설치 화면에서 SSD 표시가 있는 드라이브가 솔리드 스테이트입니다)",
+    "install.android.t": "Android",
+    "install.android.p": "Android 설치는 담당자에게 문의하세요. PC 버전을 권장합니다.",
+    "spec.lead": "기기가 다음 요구 사항을 충족하는지 확인하세요.",
+    "spec.component": "부품",
+    "spec.min": "최소",
+    "spec.rec": "권장",
+    "spec.cpu": "CPU",
+    "spec.gpu": "GPU",
+    "spec.ram": "메모리",
+    "spec.storage": "저장공간",
+    "spec.os": "OS",
+    "spec.storage.v": "SSD에 설치하고 16GB 디스크 공간 확보",
+    "spec.os.v": "Windows 10 이상",
+    "ui.tag": "핵심",
+    "ui.lead": "아래 번호와 스크린샷 마커를 맞춰 보면 중국어 UI 의미를 이해할 수 있습니다.",
+    "ui.main.title": "메인 화면(그림 설명)",
+    "ui.main.m1.k": "캐릭터 정보",
+    "ui.main.m1.v": "Character Info / キャラクター情報 / 캐릭터 정보",
+    "ui.main.m2.k": "기능 메뉴",
+    "ui.main.m2.v": "Function Menu / 機能メニュー / 기능 메뉴",
+    "ui.main.m3.k": "계정 UID",
+    "ui.main.m3.v": "User ID / ユーザーID / 계정 UID",
+    "ui.story.title": "스토리 화면(그림 설명)",
+    "ui.story.placeholder": "[샘플] 스토리 화면 스크린샷으로 교체",
+    "ui.story.m1.k": "대사",
+    "ui.story.m1.v": "Dialogue / セリフ / 대사",
+    "ui.story.m2.k": "자동 재생",
+    "ui.story.m2.v": "Auto / オート / 자동",
+    "ui.story.m3.k": "건너뛰기",
+    "ui.story.m3.v": "Skip / スキップ / 건너뛰기",
+    "ui.battle.title": "전투 화면(그림 설명)",
+    "ui.battle.placeholder": "[샘플] 전투 화면 스크린샷으로 교체",
+    "ui.battle.m1.k": "조이스틱",
+    "ui.battle.m1.v": "Joystick / スティック / 조이스틱",
+    "ui.battle.m2.k": "스킬 버튼",
+    "ui.battle.m2.v": "Skills / スキル / 스킬",
+    "ui.battle.m3.k": "HP / 상태",
+    "ui.battle.m3.v": "HP / Status / ステータス / 상태",
+    "ui.note": "참고: 마커 위치는 실제 스크린샷에 맞게 left / top %를 조정하세요.",
+    "story.lead": "스토리 줄거리입니다(이번 테스트에서 공개된 장까지).",
+    "story.ch0.title": "프롤로그",
+    "story.ch0.p1": "멸망한 나라의 왕자 카를로스는 용의 섬 앙카라곤 해안에서 깨어나, 지난 3년간의 기억을 모두 잃었다. 그는 용족 공주 엘라비엘의 도움으로 고국 부흥의 계획을 준비한다.",
+    "story.ch0.p2": "헤어졌던 여동생이 '이타'라는 가명으로 섬에 나타나, 바다의 거수가 섬을 습격할 것이라는 경고를 전한다. 이 괴물을 쓰러뜨릴 수 있는 것은 카를로스와 함께 신비롭게 나타난 파사의 검뿐이었다.",
+    "story.ch0.p3": "바다의 거수에 맞서기 위해 섬 곳곳의 영웅들이 카를로스 곁에 모인다.",
+    "story.ch1.title": "제1장",
+    "story.ch1.p1": "엘라비엘의 소개로 카를로스는 새 동료들과 함께 카라드린으로 향해, 옛 동료 트리스타 공작을 찾는다. 그러나 트리스타는 카를로스에 대한 기억을 잃은 상태였다.",
+    "story.ch1.p2": "카라드린은 제국에 맞서 엘라 공주를 구출하려는 투쟁을 비밀리에 준비하고 있었다. 이를 위해 카를로스는 제국으로부터 용병단 무장 설립 허가를 얻어낼 방법을 찾아야 한다.",
+    "story.ch1.p3": "제국의 허가를 구하는 과정에서 그들은 제국 육군 파벌의 신뢰를 얻지만, 제국의 정무관들과는 사이가 나빠진다. 육군 장군 안드레아스의 지시로 카를로스 일행은 지원 물자를 싣고 마물과 맞서는 최전선 니론도로 향한다.",
+    "story.ch1.p4": "트리스타는 계략을 역이용해, 카를로스에게 동맹을 요청하는 밀서를 니론도에 있는 제국 해군 제독 마비나에게 전하게 하여, 니론도에 갇힌 카라드린의 죄수 장군 길포드를 풀어주려 한다.",
+    "story.ch1.p5": "연금되어 있던 카라드린의 엘라 공주도 더는 굴하지 않기로 결심하고, 카를로스 일행과 함께 니론도로 향하기로 한다.",
+    "story.ch2.title": "제2장(일부)",
+    "story.ch2.p1": "일행은 파도 마을에 하선한 뒤 해요병단 반란군의 습격을 받고, 반란군의 몸에서 어둠의 기운을 뿜는 검은 깃털을 발견한다.",
+    "story.ch2.p2": "가핀켈 요새에서 포위된 해요병단장 레티아를 구출하고, 검은 깃털의 힘을 쓰는 해요 반란군 부단장을 일단 격퇴한다.",
+    "story.ch2.p3": "브루테아의 지령에 따라 주인공·디할트·레티아는 먼저 미광 등대로 향한다. 그곳에서 실수로 아니키 신전에 들어가게 되고, 이후 흑천사와 반란군, 그리고 이타와 마주친다.",
+    "story.ch2.note": "(이번 테스트에서 공개된 장까지만)",
+    "footer.copy": "© 2026 게임명 All rights reserved.",
+    "footer.confidential": "기밀 · 초대 KOL 전용"
   }
 };
 
