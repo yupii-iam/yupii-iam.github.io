@@ -31,8 +31,8 @@ nav.side a.active{background:#e8edff;color:var(--brand-dark);font-weight:700}
 nav.side a .num{font-size:11px;font-weight:700;color:var(--brand);opacity:.7;width:20px}
 main{min-width:0}
 section.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;margin-bottom:24px}
-section.nda-card{border:1px solid #fda29a;border-left:4px solid var(--accent);background:#fff7f7}
-section.nda-card h2{color:#b91c1c}
+section.nda-card{border:1px solid var(--line);border-top:4px solid var(--brand);background:linear-gradient(180deg,#fafbff,#fff)}
+section.nda-card h2{color:var(--brand-dark);font-size:21px}
 section.nda-card p{color:#374151;font-size:14px}
 section.nda-card .nda-list{margin:6px 0 6px 20px;color:#374151;font-size:14px}
 section.nda-card .nda-list li{margin:6px 0}
@@ -134,13 +134,14 @@ section.card{padding:20px}
       <a href="#install"><span class="num">02</span><span data-i18n="nav.install">安装指引</span></a>
       <a href="#spec"><span class="num">03</span><span data-i18n="nav.spec">PC端推荐配置</span></a>
       <a href="#ui"><span class="num">04</span><span data-i18n="nav.ui">界面翻译对照</span></a>
+      <a href="#feedback"><span class="num">05</span><span data-i18n="nav.feedback">意见反馈</span></a>
     </nav>
   </aside>
 
   <main>
     <!-- 保密声明 -->
     <section class="card nda-card" id="confidential">
-      <h2>🔒 <span data-i18n="nda.title">亲爱的海外评测官：</span></h2>
+      <h2><span data-i18n="nda.title">亲爱的海外评测官：</span></h2>
       <p data-i18n="nda.p1">感谢您对《梦战：剑之海》的关注。</p>
       <p data-i18n="nda.p2">我们诚挚邀请您以海外评测官的身份加入本次测试。这是一次与中国大陆首次公开测试同步进行的、限量的定向邀请制预览，并非公开的海外测试。</p>
       <p data-i18n="nda.p3">我们希望通过这次提前体验，聆听您对当前版本的真实感受。您的每一条反馈，都将成为我们打磨作品、规划全球版本的重要参考。</p>
@@ -237,7 +238,7 @@ section.card{padding:20px}
           <div class="row"><span class="hk">C</span><span class="txt" data-i18n="ui.main.hk5">将领界面</span></div>
           <div class="row"><span class="hk">U</span><span class="txt" data-i18n="ui.main.hk6">编队</span></div>
           <div class="row"><span class="hk">V</span><span class="txt" data-i18n="ui.main.hk7">挑战（副本）</span></div>
-          <div class="row"><span class="hk">H</span><span class="txt" data-i18n="ui.main.hk8">营地</span></div>
+          <div class="row"><span class="hk">F4</span><span class="txt" data-i18n="ui.main.hk8">营地</span></div>
           <div class="row"><span class="hk">B</span><span class="txt" data-i18n="ui.main.hk9">背包</span></div>
           <div class="row"><span class="hk">L</span><span class="txt" data-i18n="ui.main.hk10">任务</span></div>
           <div class="row"><span class="hk">Tab</span><span class="txt" data-i18n="ui.main.hk11">聊天</span></div>
@@ -290,11 +291,10 @@ section.card{padding:20px}
           <div class="row"><span class="badge">3</span><span class="txt" data-i18n="ui.general2.d3">专精</span></div>
           <div class="row"><span class="badge">4</span><span class="txt" data-i18n="ui.general2.d4">切换主将携带技能</span></div>
           <div class="row"><span class="badge">5</span><span class="txt" data-i18n="ui.general2.d5">切换副将携带技能</span></div>
-          <div class="row"><span class="badge">6</span><span class="txt" data-i18n="ui.general2.d6">查看协力技</span></div>
-          <div class="row"><span class="badge">7</span><span class="txt" data-i18n="ui.general2.d7">士兵</span></div>
-          <div class="row"><span class="badge">8</span><span class="txt" data-i18n="ui.general2.d8">装备</span></div>
-          <div class="row"><span class="badge">9</span><span class="txt" data-i18n="ui.general2.d9">详细情况（查看详细属性）</span></div>
-          <div class="row"><span class="badge">10</span><span class="txt" data-i18n="ui.general2.d10">设为主力</span></div>
+          <div class="row"><span class="badge">6</span><span class="txt" data-i18n="ui.general2.d6">士兵</span></div>
+          <div class="row"><span class="badge">7</span><span class="txt" data-i18n="ui.general2.d7">装备</span></div>
+          <div class="row"><span class="badge">8</span><span class="txt" data-i18n="ui.general2.d8">详细情况（查看详细属性）</span></div>
+          <div class="row"><span class="badge">9</span><span class="txt" data-i18n="ui.general2.d9">设为主力</span></div>
         </div>
       </div>
 
@@ -316,7 +316,6 @@ section.card{padding:20px}
         <div class="figure-cap">
           <div class="row"><span class="badge">1</span><span class="txt" data-i18n="ui.general4.d1">一键装配</span></div>
           <div class="row"><span class="badge">2</span><span class="txt" data-i18n="ui.general4.d2">一键卸下</span></div>
-          <div class="row"><span class="badge">3</span><span class="txt" data-i18n="ui.general4.d3">锻造装备</span></div>
         </div>
       </div>
 
@@ -345,8 +344,8 @@ section.card{padding:20px}
           <img src="images/battle-prep2.jpg" alt="Battle Prep 2" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
         </div>
         <div class="figure-cap">
-          <div class="row"><span class="badge">1</span><span class="txt" data-i18n="ui.battleprep2.d1">胜利条件（注意胜利条件可能随剧情有所不同）</span></div>
-          <div class="row"><span class="badge">2</span><span class="txt" data-i18n="ui.battleprep2.d2">失败条件</span></div>
+          <div class="row"><span class="badge">1</span><span class="txt" data-i18n="ui.battleprep2.d1">胜利条件（注意：部分胜利条件随剧情有所不同）</span></div>
+          <div class="row"><span class="badge">2</span><span class="txt" data-i18n="ui.battleprep2.d2">失败条件（注意：部分失败条件随剧情有所不同）</span></div>
         </div>
       </div>
 
@@ -374,7 +373,7 @@ section.card{padding:20px}
         </div>
         <div class="figure-cap">
           <div class="row"><span class="badge">1</span><span class="txt" data-i18n="ui.challenge.d1">职业进阶材料</span></div>
-          <div class="row"><span class="badge">2</span><span class="txt" data-i18n="ui.challenge.d2">获取将领经验（注意另外 3 个副本均无法获得将领经验）</span></div>
+          <div class="row"><span class="badge">2</span><span class="txt" data-i18n="ui.challenge.d2">获取将领经验（注意：另外 3 个副本均无法获得将领经验）</span></div>
           <div class="row"><span class="badge">3</span><span class="txt" data-i18n="ui.challenge.d3">获取英雄武器装备</span></div>
           <div class="row"><span class="badge">4</span><span class="txt" data-i18n="ui.challenge.d4">获取士兵强化素材</span></div>
         </div>
@@ -393,6 +392,12 @@ section.card{padding:20px}
               </div>
       </details>
 </section>
+
+    <!-- 05 意见反馈 -->
+    <section class="card" id="feedback">
+      <h2><span data-i18n="nav.feedback">意见反馈</span></h2>
+      <div class="contact"><div class="k" data-i18n="feedback.link">反馈链接</div><div class="v"><a href="https://forms.gle/ZjXyaKG9SzhFzx7w8" target="_blank" rel="noopener">https://forms.gle/ZjXyaKG9SzhFzx7w8</a></div></div>
+    </section>
   </main>
 </div>
 
@@ -422,6 +427,8 @@ const I18N = {
     "nav.install": "安装指引",
     "nav.spec": "PC端推荐配置",
     "nav.ui": "界面翻译对照",
+    "nav.feedback": "意见反馈",
+    "feedback.link": "反馈链接",
     "overview.lead": "本次测试的基本信息。",
     "overview.type": "测试类型",
     "overview.type.v": "限量删档不计费测试",
@@ -484,17 +491,15 @@ const I18N = {
     "ui.general2.d3": "专精",
     "ui.general2.d4": "切换主将携带技能",
     "ui.general2.d5": "切换副将携带技能",
-    "ui.general2.d6": "查看协力技",
-    "ui.general2.d7": "士兵",
-    "ui.general2.d8": "装备",
-    "ui.general2.d9": "详细情况",
-    "ui.general2.d10": "设为主力",
+    "ui.general2.d6": "士兵",
+    "ui.general2.d7": "装备",
+    "ui.general2.d8": "详细情况（查看详细属性）",
+    "ui.general2.d9": "设为主力",
     "ui.general3.title": "将领界面3",
     "ui.general3.d1": "更换士兵",
     "ui.general4.title": "将领界面4",
     "ui.general4.d1": "一键装配",
     "ui.general4.d2": "一键卸下",
-    "ui.general4.d3": "锻造装备",
     "ui.challenge.title": "挑战界面",
     "ui.challenge.d1": "职业进阶材料",
     "ui.challenge.d2": "获取将领经验（注意：另外 3 个副本均无法获得将领经验）",
@@ -507,8 +512,8 @@ const I18N = {
     "ui.battleprep1.d4": "危险范围",
     "ui.battleprep1.d5": "战斗回合",
     "ui.battleprep2.title": "战前准备2",
-    "ui.battleprep2.d1": "胜利条件（注意：胜利条件可能随剧情有所不同）",
-    "ui.battleprep2.d2": "失败条件",
+    "ui.battleprep2.d1": "胜利条件（注意：部分胜利条件随剧情有所不同）",
+    "ui.battleprep2.d2": "失败条件（注意：部分失败条件随剧情有所不同）",
     "ui.battle.title": "战斗界面",
     "ui.battle.d1": "危险范围",
     "ui.battle.d2": "回合结束",
@@ -543,6 +548,8 @@ const I18N = {
     "nav.install": "Installation",
     "nav.spec": "Recommended PC Specs",
     "nav.ui": "UI Translation",
+    "nav.feedback": "Feedback",
+    "feedback.link": "Feedback Link",
     "overview.lead": "Key information about this test.",
     "overview.type": "Test Type",
     "overview.type.v": "Limited, data-wipe, no-charge test",
@@ -630,6 +637,8 @@ const I18N = {
     "nav.install": "インストールガイド",
     "nav.spec": "推奨PCスペック",
     "nav.ui": "UI翻訳ガイド",
+    "nav.feedback": "ご意見・フィードバック",
+    "feedback.link": "フィードバックリンク",
     "overview.lead": "今回のテストの基本情報です。",
     "overview.type": "テスト種別",
     "overview.type.v": "数量限定・データ削除・無課金テスト",
@@ -717,6 +726,8 @@ const I18N = {
     "nav.install": "설치 가이드",
     "nav.spec": "권장 PC 사양",
     "nav.ui": "UI 번역 가이드",
+    "nav.feedback": "의견 피드백",
+    "feedback.link": "피드백 링크",
     "overview.lead": "이번 테스트의 기본 정보입니다.",
     "overview.type": "테스트 유형",
     "overview.type.v": "한정 수량·데이터 삭제·무과금 테스트",
