@@ -31,6 +31,9 @@ nav.side a.active{background:#e8edff;color:var(--brand-dark);font-weight:700}
 nav.side a .num{font-size:11px;font-weight:700;color:var(--brand);opacity:.7;width:20px}
 main{min-width:0}
 section.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;margin-bottom:24px}
+section.nda-card{border:1px solid #fda29a;border-left:4px solid var(--accent);background:#fff7f7}
+section.nda-card h2{color:#b91c1c}
+section.nda-card p{color:#374151;font-size:14px}
 section h2{font-size:20px;font-weight:800;margin-bottom:6px;display:flex;align-items:center;gap:10px}
 section h2 .tag{font-size:12px;background:var(--brand);color:#fff;padding:2px 9px;border-radius:6px;font-weight:600;letter-spacing:.02em}
 section .lead{color:var(--muted);font-size:14px;margin-bottom:18px}
@@ -121,10 +124,6 @@ section.card{padding:20px}
   </div>
 </header>
 
-<div class="nda">
-  <strong data-i18n="nda.strong">保密提示：</strong><span data-i18n="nda.text">本测试包及全部内容均属保密信息，未经书面许可请勿对外传播或公开未解禁内容。</span>
-</div>
-
 <div class="layout">
   <aside>
     <div class="nav-title" data-i18n="nav.title">目录</div>
@@ -137,6 +136,14 @@ section.card{padding:20px}
   </aside>
 
   <main>
+    <!-- 保密声明 -->
+    <section class="card nda-card" id="confidential">
+      <h2>🔒 <span data-i18n="nda.title">保密声明</span></h2>
+      <p data-i18n="nda.p1">本次测试的游戏内容及试玩体验，可正常对外分享（包括截图、直播、录制等）。</p>
+      <p data-i18n="nda.p2">但本测试包、测试账号及全部相关材料均为机密信息，仅限受邀的国际测评团成员使用，严禁以任何形式对外泄露或传播。任何未经授权的泄露均构成违约，并将依法追究相应的法律责任。</p>
+      <p data-i18n="nda.p3">本次测试仅面向中国大陆地区开展。由于游戏内系统语言目前仅有中文，本指南将作为您的操作参考。</p>
+    </section>
+
     <!-- 01 测试概览 -->
     <section class="card" id="overview">
       <h2><span data-i18n="nav.overview">测试概览</span></h2>
@@ -390,8 +397,10 @@ const I18N = {
   "zh": {
     "app.title": "《梦战：剑之海》中国大陆首测操作指南",
     "app.subtitle": "试玩说明书 · 封闭测试版本",
-    "nda.strong": "保密提示：",
-    "nda.text": "本操作指南仅做KOL/媒体安装、操作指引用途，未经书面许可请勿对外传播。",
+    "nda.title": "保密声明",
+    "nda.p1": "本次测试的游戏内容及试玩体验，可正常对外分享（包括截图、直播、录制等）。",
+    "nda.p2": "但本测试包、测试账号及全部相关材料均为机密信息，仅限受邀的国际测评团成员使用，严禁以任何形式对外泄露或传播。任何未经授权的泄露均构成违约，并将依法追究相应的法律责任。",
+    "nda.p3": "本次测试仅面向中国大陆地区开展。由于游戏内系统语言目前仅有中文，本指南将作为您的操作参考。",
     "nav.title": "目录",
     "nav.overview": "测试概览",
     "nav.install": "安装指引",
@@ -503,8 +512,10 @@ const I18N = {
   "en": {
     "app.title": "Project X — China CBT Test Guide",
     "app.subtitle": "KOL Playtest Guide · Closed Beta",
-    "nda.strong": "Confidential: ",
-    "nda.text": "This test build and all its contents are confidential. Do not distribute or publish unreleased content without written permission.",
+    "nda.title": "Confidentiality Statement",
+    "nda.p1": "Game content and playtest experiences from this test may be shared publicly (including screenshots, live streaming, recording, etc.).",
+    "nda.p2": "However, the test build, test account, and all related materials are confidential and are provided solely for the invited international review team. Any form of external leakage or distribution is strictly prohibited. Any unauthorized disclosure constitutes a breach of agreement and may result in legal liability.",
+    "nda.p3": "This test is conducted exclusively for mainland China. As the in-game system language is currently Chinese only, this guide serves as your operation reference.",
     "nav.title": "Contents",
     "nav.overview": "Overview",
     "nav.install": "Installation",
@@ -582,8 +593,10 @@ const I18N = {
   "ja": {
     "app.title": "『XXゲーム』中国版 CBT テストガイド",
     "app.subtitle": "海外 KOL 試遊ガイド · クローズドβ版",
-    "nda.strong": "機密保持：",
-    "nda.text": "本テストパックおよび全コンテンツは機密情報です。書面による許可なく未公開コンテンツを配布・公開しないでください。",
+    "nda.title": "機密保持に関する声明",
+    "nda.p1": "本テストのゲーム内容および試遊体験は、外部へ公開・共有できます（スクリーンショット、ライブ配信、録画などを含む）。",
+    "nda.p2": "ただし、本テストパック、テストアカウントおよび関連資料はすべて機密情報であり、招待された国際評価チームのメンバーに限り提供されます。いかなる形であれ外部への漏えい・共有は固く禁じられています。無断での漏えいは契約違反となり、法的責任を問われる場合があります。",
+    "nda.p3": "本テストは中国本土のみを対象として実施されます。ゲーム内のシステム言語は現在中国語のみのため、本ガイドを操作の参考としてご利用ください。",
     "nav.title": "目次",
     "nav.overview": "テスト概要",
     "nav.install": "インストールガイド",
@@ -661,8 +674,10 @@ const I18N = {
   "ko": {
     "app.title": "『XX게임』중국서버 CBT 테스트 가이드",
     "app.subtitle": "해외 KOL 체험 가이드 · 클로즈드 베타",
-    "nda.strong": "기밀 유지: ",
-    "nda.text": "본 테스트 패키지 및 모든 콘텐츠는 기밀 정보입니다. 서면 허가 없이 미공개 콘텐츠를 배포·공개하지 마세요.",
+    "nda.title": "기밀 유지 성명",
+    "nda.p1": "본 테스트의 게임 콘텐츠 및 체험 내용은 외부에 공개·공유할 수 있습니다(스크린샷, 라이브 방송, 녹화 등 포함).",
+    "nda.p2": "다만, 본 테스트 패키지, 테스트 계정 및 관련 자료는 모두 기밀 정보이며, 초대된 국제 평가단 구성원에게만 제공됩니다. 어떤 형태로든 외부 유출·공유는 엄격히 금지됩니다. 무단 유출은 계약 위반이며 법적 책임을 질 수 있습니다.",
+    "nda.p3": "본 테스트는 중국 본토만을 대상으로 진행됩니다. 게임 내 시스템 언어가 현재 중국어뿐이므로, 본 가이드를 조작 참고용으로 활용하세요.",
     "nav.title": "목차",
     "nav.overview": "테스트 개요",
     "nav.install": "설치 가이드",
